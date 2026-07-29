@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solutions Overview | DONGHAI CRYSTAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Theme Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "surface-dim": "#dadadc",
+                "surface-container": "#eeeef0",
+                "secondary-fixed": "#efe0d8",
+                "primary": "#33253b",
+                "on-surface": "#1a1c1e",
+                "on-error": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "tertiary-fixed": "#e1e3e5",
+                "primary-container": "#4a3b52",
+                "on-secondary-fixed-variant": "#4f453f",
+                "error-container": "#ffdad6",
+                "surface-container-low": "#f3f3f6",
+                "smoky-quartz": "#6F645E",
+                "on-surface-variant": "#4a454b",
+                "primary-fixed": "#f1dbf9",
+                "surface": "#f9f9fc",
+                "tertiary-fixed-dim": "#c4c7c9",
+                "tertiary": "#282b2d",
+                "surface-tint": "#695871",
+                "on-tertiary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-secondary-container": "#6b605a",
+                "success-emerald": "#2D5A43",
+                "on-primary-container": "#baa6c1",
+                "on-primary": "#ffffff",
+                "basalt-white": "#F8F9FA",
+                "background": "#f9f9fc",
+                "amethyst-deep": "#4A3B52",
+                "on-tertiary-fixed": "#191c1e",
+                "error": "#ba1a1a",
+                "on-primary-fixed": "#23162b",
+                "primary-fixed-dim": "#d4bfdc",
+                "inverse-primary": "#d4bfdc",
+                "outline": "#7c757c",
+                "on-primary-fixed-variant": "#504158",
+                "secondary-fixed-dim": "#d2c4bc",
+                "secondary": "#675c56",
+                "warning-amber": "#B37400",
+                "stone-gray": "#94999C",
+                "on-secondary-fixed": "#221a16",
+                "on-background": "#1a1c1e",
+                "surface-variant": "#e2e2e5",
+                "inverse-surface": "#2f3133",
+                "inverse-on-surface": "#f0f0f3",
+                "on-tertiary-fixed-variant": "#444749",
+                "on-tertiary-container": "#aaadaf",
+                "surface-container-high": "#e8e8ea",
+                "tertiary-container": "#3e4143",
+                "surface-bright": "#f9f9fc",
+                "outline-variant": "#ccc4cc",
+                "on-error-container": "#93000a",
+                "surface-container-highest": "#e2e2e5",
+                "secondary-container": "#ecddd5"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-desktop": "64px",
+                "stack-lg": "32px",
+                "margin-mobile": "20px",
+                "stack-sm": "8px",
+                "margin-tablet": "32px",
+                "container-max": "1440px",
+                "stack-md": "16px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "headline-lg-mobile": ["\"Source Serif 4\""],
+                "headline-lg": ["\"Source Serif 4\""],
+                "label-caps": ["JetBrains Mono"],
+                "headline-sm": ["\"Source Serif 4\""],
+                "body-lg": ["Hanken Grotesk"],
+                "technical-data": ["JetBrains Mono"],
+                "body-md": ["Hanken Grotesk"],
+                "headline-md": ["\"Source Serif 4\""]
+            },
+            "fontSize": {
+                "headline-lg-mobile": ["30px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "technical-data": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .solution-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .solution-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant">
+<nav class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">DONGHAI CRYSTAL</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Custom Development</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Samples</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Quality</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">About</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="text-on-surface-variant font-label-caps text-label-caps cursor-pointer">EN/FR/DE</span>
+<button class="bg-amethyst-deep text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
+                    Upload Your Design
+                </button>
+</div>
+</nav>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-20">
+<!-- Hero Section -->
+<section class="mb-24 max-w-3xl">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-6">Technical Solutions for Jewelry Sourcing</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                Precision-engineered crystal components optimized for high-end manufacturing. Select your primary customer task to begin technical specification and project onboarding.
+            </p>
+<div class="flex space-x-4">
+<div class="flex items-center space-x-2 border border-outline-variant px-4 py-2 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-smoky-quartz">verified</span>
+<span class="font-technical-data text-technical-data text-smoky-quartz">ISO 9001 CERTIFIED</span>
+</div>
+<div class="flex items-center space-x-2 border border-outline-variant px-4 py-2 rounded bg-surface-container-low">
+<span class="material-symbols-outlined text-smoky-quartz">precision_manufacturing</span>
+<span class="font-technical-data text-technical-data text-smoky-quartz">0.02MM TOLERANCE</span>
+</div>
+</div>
+</section>
+<!-- Solutions Grid (Bento Style) -->
+<div class="bento-grid">
+<!-- 1. Signature Pendants -->
+<div class="col-span-12 md:col-span-7 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="p-8 flex-grow">
+<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 01</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Signature Pendants</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">
+                        Develop high-visibility centerpieces with complex geometry. We provide precision drilling and custom faceting for large-format crystals.
+                    </p>
+<div class="grid grid-cols-2 gap-6 mb-8">
+<div>
+<h4 class="font-label-caps text-label-caps text-primary border-b border-outline-variant pb-2 mb-4">Key Parameters</h4>
+<ul class="space-y-3">
+<li class="flex items-center font-technical-data text-technical-data">
+<span class="material-symbols-outlined mr-2 text-sm">straighten</span> Length/Width: up to 120mm
+                                </li>
+<li class="flex items-center font-technical-data text-technical-data">
+<span class="material-symbols-outlined mr-2 text-sm">layers</span> Thickness: 1mm - 25mm
+                                </li>
+<li class="flex items-center font-technical-data text-technical-data">
+<span class="material-symbols-outlined mr-2 text-sm">adjust</span> Hole Position: Center/Offset
+                                </li>
+</ul>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<h4 class="font-label-caps text-label-caps text-primary mb-3">Hole Standards</h4>
+<div class="flex space-x-4">
+<div class="text-center">
+<span class="material-symbols-outlined block text-3xl mb-1">radio_button_checked</span>
+<span class="text-[10px] font-technical-data">Through-hole</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined block text-3xl mb-1">radio_button_partial</span>
+<span class="text-[10px] font-technical-data">Blind-hole</span>
+</div>
+<div class="text-center">
+<span class="material-symbols-outlined block text-3xl mb-1">open_with</span>
+<span class="text-[10px] font-technical-data">Side-drill</span>
+</div>
+</div>
+</div>
+</div>
+<button class="bg-amethyst-deep text-on-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
+                        Start a Project
+                    </button>
+</div>
+<div class="h-64 bg-surface-variant relative overflow-hidden" data-alt="A macro photograph of a large, precision-cut smoky quartz pendant with perfectly sharp facets and a clean technical through-hole. The lighting is cold and clinical, highlighting the geometric perfection and lack of internal inclusions. The crystal is placed on a matte black architectural surface, reflecting a high-end industrial engineering aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBi397buR-yxHa-qFYKMeM_Y2ap4dxJRKP2-nNmu9uni7fXRHoLHjLz5epUr_KIPwClao-mOatGbHqq2k5u3leVUv-al2fZMXgMKBL630M4PXjf4bEHYoaWdqBJTZJbEBIq0zQGE4COntylAZjbU_rro_P9v7A6DSMDsbpiFytUpuZ-REE9QxaDpqIbFZKErIADIpMrGuQMZQO9fL_oissqe-MzRnckr8avgBr9l6BA0IszpTZROifv-w')">
+</div>
+</div>
+<!-- 2. Earring Pairs -->
+<div class="col-span-12 md:col-span-5 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+<div class="h-48 bg-surface-variant relative overflow-hidden" data-alt="Two identical pear-shaped clear crystals laid out symmetrically on a technical drawing grid. Calipers are visible in the background, implying precision measurement. The lighting is bright and even, casting soft shadows that emphasize the identical color grading and refractive indices of the pair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDICbeCjIvZ2emORKjSSUJyuRpShpMEodUMRSE0Wi4lgysorys0CC1rAdHNbgH959k1AMxzxe45B7YOOCNbfWx0qvkGU4Er-cu_XyUJNiQtrJraI4oYJyGcnM00WBICSoC8gODncjVHkQjZ-5XTLpUaC_AEpf5xvJXFc0vskbZ1XgiuegtdG3gz0fr4uuGDuXg0No6vT5kkGkijYzrJT4uHcQMg12nGKb43zKRaoiW9VDTTA9WK48wMqw')">
+</div>
+<div class="p-8">
+<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 02</span>
+<h2 class="font-headline-md text-headline-md text-primary mb-4">Earring Pairs</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                        Automated visual matching for refractive index, color saturation, and weight symmetry.
+                    </p>
+<div class="space-y-4 mb-8">
+<div class="flex justify-between items-center bg-surface-container-low p-3 rounded">
+<span class="font-technical-data text-technical-data">Weight Tolerance</span>
+<span class="font-technical-data text-technical-data font-bold">鍗?.005g</span>
+</div>
+<div class="flex justify-between items-center bg-surface-container-low p-3 rounded">
+<span class="font-technical-data text-technical-data">Color Delta-E</span>
+<span class="font-technical-data text-technical-data font-bold">&lt; 0.8</span>
+</div>
+</div>
+<button class="w-full bg-secondary text-on-secondary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
+                        Start a Project
+                    </button>
+</div>
+</div>
+<!-- 3. Existing Setting Adaptation -->
+<div class="col-span-12 md:col-span-4 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 03</span>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Setting Adaptation</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Reverse engineering for pre-cast metal settings. Send us your CAD or physical sample for perfect stone fitment.
+                </p>
+<div class="mb-8 border-l-2 border-primary-container pl-4 py-2">
+<p class="text-label-caps font-label-caps text-primary mb-1">Process</p>
+<p class="text-technical-data font-technical-data text-smoky-quartz">3D Scanning 閳?CAD Integration 閳?Tolerance Offset 閳?Sample Cut</p>
+</div>
+<button class="w-full border border-primary text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-low transition-all">
+                    Start a Project
+                </button>
+</div>
+<!-- 4. Bead Collections -->
+<div class="col-span-12 md:col-span-4 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
+<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 04</span>
+<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Bead Collections</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                    Bulk precision sourcing for high-end beaded strands. Uniformity in hole diameter and internal polish.
+                </p>
+<div class="grid grid-cols-2 gap-2 mb-8">
+<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
+<span class="material-symbols-outlined text-sm mr-2">panorama_fish_eye</span>
+<span class="text-technical-data font-technical-data text-[11px]">Sphere</span>
+</div>
+<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
+<span class="material-symbols-outlined text-sm mr-2">hexagon</span>
+<span class="text-technical-data font-technical-data text-[11px]">Faceted</span>
+</div>
+<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
+<span class="material-symbols-outlined text-sm mr-2">crop_portrait</span>
+<span class="text-technical-data font-technical-data text-[11px]">Tube</span>
+</div>
+<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
+<span class="material-symbols-outlined text-sm mr-2">token</span>
+<span class="text-technical-data font-technical-data text-[11px]">Rondelle</span>
+</div>
+</div>
+<button class="w-full border border-primary text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-low transition-all">
+                    Start a Project
+                </button>
+</div>
+<!-- 5. New Component Development -->
+<div class="col-span-12 md:col-span-4 solution-card bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-on-primary-container mb-2 block uppercase tracking-widest">Task 05</span>
+<h2 class="font-headline-sm text-headline-sm text-on-primary mb-4">Custom R&amp;D</h2>
+<p class="font-body-md text-body-md opacity-80 mb-6">
+                        Unique shapes, proprietary cutting patterns, and experimental material treatments.
+                    </p>
+</div>
+<div>
+<div class="mb-8 flex items-center bg-primary-container/40 p-4 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-on-primary-container mr-4">science</span>
+<div class="font-technical-data text-technical-data">
+                            Full CAD support and material disclosure provided for every R&amp;D project.
+                        </div>
+</div>
+<button class="w-full bg-basalt-white text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-high active:scale-95 transition-all">
+                        Consult Expert
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest border-t border-outline-variant mt-24">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1">
+<div class="font-headline-sm text-headline-sm text-primary mb-4">DONGHAI CRYSTAL</div>
+<p class="font-body-md text-body-md text-on-surface-variant">婕?2024 Donghai Crystal. Professional Precision Sourcing.</p>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Resources</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Material Disclosures</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Compliance</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cutting Types Guide</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Legal</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-6">Contact</h4>
+<ul class="space-y-3">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Support</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Email Engineering</a></li>
+</ul>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for solution cards
+        document.querySelectorAll('.solution-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.querySelector('button')?.classList.add('shadow-md');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.querySelector('button')?.classList.remove('shadow-md');
+            });
+        });
+    </script>
+<script src="/site-nav.js"></script></body></html>
