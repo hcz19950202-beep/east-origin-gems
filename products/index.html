@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Catalog | DONGHAI CRYSTAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .filter-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .filter-scrollbar::-webkit-scrollbar-thumb {
+            background: #ccc4cc;
+            border-radius: 2px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#dadadc",
+                        "surface-container": "#eeeef0",
+                        "secondary-fixed": "#efe0d8",
+                        "primary": "#33253b",
+                        "on-surface": "#1a1c1e",
+                        "on-error": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#e1e3e5",
+                        "primary-container": "#4a3b52",
+                        "on-secondary-fixed-variant": "#4f453f",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f3f6",
+                        "smoky-quartz": "#6F645E",
+                        "on-surface-variant": "#4a454b",
+                        "primary-fixed": "#f1dbf9",
+                        "surface": "#f9f9fc",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "tertiary": "#282b2d",
+                        "surface-tint": "#695871",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6b605a",
+                        "success-emerald": "#2D5A43",
+                        "on-primary-container": "#baa6c1",
+                        "on-primary": "#ffffff",
+                        "basalt-white": "#F8F9FA",
+                        "background": "#f9f9fc",
+                        "amethyst-deep": "#4A3B52",
+                        "on-tertiary-fixed": "#191c1e",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#23162b",
+                        "primary-fixed-dim": "#d4bfdc",
+                        "inverse-primary": "#d4bfdc",
+                        "outline": "#7c757c",
+                        "on-primary-fixed-variant": "#504158",
+                        "secondary-fixed-dim": "#d2c4bc",
+                        "secondary": "#675c56",
+                        "warning-amber": "#B37400",
+                        "stone-gray": "#94999C",
+                        "on-secondary-fixed": "#221a16",
+                        "on-background": "#1a1c1e",
+                        "surface-variant": "#e2e2e5",
+                        "inverse-surface": "#2f3133",
+                        "inverse-on-surface": "#f0f0f3",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "on-tertiary-container": "#aaadaf",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary-container": "#3e4143",
+                        "surface-bright": "#f9f9fc",
+                        "outline-variant": "#ccc4cc",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e5",
+                        "secondary-container": "#ecddd5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "stack-lg": "32px",
+                        "margin-mobile": "20px",
+                        "stack-sm": "8px",
+                        "margin-tablet": "32px",
+                        "container-max": "1440px",
+                        "stack-md": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-sm": ["\"Source Serif 4\""],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-data": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "technical-data": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface-container/80 docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">DONGHAI CRYSTAL</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Solutions</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-caps text-label-caps" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Custom Development</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Samples</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Quality</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">About</a>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="hidden lg:block font-label-caps text-label-caps text-on-surface-variant hover:text-primary px-4 py-2 border border-outline-variant rounded transition-all">EN/FR/DE</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary-container transition-all active:scale-95">Upload Your Design</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg min-h-screen flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar Filter (Fixed Width) -->
+<aside class="w-full md:w-64 flex-shrink-0 flex flex-col gap-stack-lg">
+<div class="flex items-center justify-between">
+<h2 class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Technical Filters</h2>
+<button class="text-technical-data text-stone-gray hover:text-primary">Clear All</button>
+</div>
+<!-- Filter Groups -->
+<div class="flex flex-col gap-6 filter-scrollbar overflow-y-auto max-h-[819px] pr-2">
+<!-- Filter: Product Type -->
+<div class="border-b border-outline-variant pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Product Type</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Loose Stones</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Beads &amp; Spheres</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Industrial Blanks</span>
+</label>
+</div>
+</div>
+<!-- Filter: Stone -->
+<div class="border-b border-outline-variant pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Crystal Variety</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Amethyst</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Smoky Quartz</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Citrine</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary" type="checkbox"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Clear Quartz</span>
+</label>
+</div>
+</div>
+<!-- Filter: Color Grade -->
+<div class="border-b border-outline-variant pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Chromatic Range</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="grid grid-cols-5 gap-2">
+<div class="w-8 h-8 bg-[#33253b] rounded-sm border border-outline cursor-pointer" title="Deep Purple"></div>
+<div class="w-8 h-8 bg-[#6F645E] rounded-sm border border-outline cursor-pointer" title="Smoky Grey"></div>
+<div class="w-8 h-8 bg-[#E5B100] rounded-sm border border-outline cursor-pointer" title="Citrine Amber"></div>
+<div class="w-8 h-8 bg-[#F8F9FA] rounded-sm border border-outline cursor-pointer" title="Crystal Clear"></div>
+<div class="w-8 h-8 bg-[#C5B3D1] rounded-sm border border-outline cursor-pointer" title="Light Lavender"></div>
+</div>
+</div>
+<!-- Filter: Shape -->
+<div class="border-b border-outline-variant pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Geometry</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="grid grid-cols-2 gap-2">
+<button class="px-2 py-1 text-technical-data border border-outline-variant rounded hover:bg-surface-container-low transition-colors">Octagon</button>
+<button class="px-2 py-1 text-technical-data border border-outline-variant rounded hover:bg-surface-container-low transition-colors">Round Brilliant</button>
+<button class="px-2 py-1 text-technical-data border border-outline-variant rounded hover:bg-surface-container-low transition-colors">Cushion</button>
+<button class="px-2 py-1 text-technical-data border border-outline-variant rounded hover:bg-surface-container-low transition-colors">Pear</button>
+</div>
+</div>
+<!-- Filter: Drilling -->
+<div class="border-b border-outline-variant pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Drilling / Finish</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<select class="w-full bg-transparent border-outline-variant rounded font-technical-data text-technical-data focus:border-primary">
+<option>Top Drilled (0.5mm)</option>
+<option>Center Drilled (1.0mm)</option>
+<option>Un-drilled (Raw Cut)</option>
+</select>
+</div>
+<!-- Filter: Grade -->
+<div class="pb-4">
+<button class="flex items-center justify-between w-full font-label-caps text-label-caps mb-3">
+<span>Purity Grade</span>
+<span class="material-symbols-outlined text-sm">expand_more</span>
+</button>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="grade" type="radio"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Grade AAA (Premium)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="grade" type="radio"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Grade AA (Standard)</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary" name="grade" type="radio"/>
+<span class="font-technical-data text-technical-data text-on-surface-variant group-hover:text-primary">Grade A (Industrial)</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Material Disclosure Banner -->
+<div class="bg-surface-container-low border-l-4 border-amethyst-deep p-4 rounded-r-lg mt-stack-lg">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-amethyst-deep text-[18px]">verified_user</span>
+<span class="font-label-caps text-[11px] text-amethyst-deep font-bold">MATERIAL DISCLOSURE</span>
+</div>
+<p class="text-technical-data text-on-surface-variant leading-relaxed">
+                    Donghai Crystal strictly separates <strong class="text-primary">Natural Origin</strong> minerals from <strong class="text-primary">Hydrothermal Synthetic</strong> crystals. All items in this catalog are Natural unless specifically tagged as "Lab-Grown" in the technical specification table.
+                </p>
+<button class="mt-3 text-technical-data font-bold text-amethyst-deep underline hover:no-underline">Read Compliance Report</button>
+</div>
+</aside>
+<!-- Main Product Grid -->
+<section class="flex-1">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary">Technical Catalog</h1>
+<p class="text-body-md text-on-surface-variant max-w-xl">Precision-sourced crystal components for jewelry manufacturing and industrial applications. Real-time stock levels for batch orders.</p>
+</div>
+<div class="flex items-center gap-stack-md">
+<span class="font-technical-data text-technical-data text-stone-gray">Displaying 142 Results</span>
+<select class="bg-surface-container-low border-none rounded px-4 py-2 font-technical-data text-technical-data outline-none">
+<option>Sort by: Newest</option>
+<option>Sort by: Stock (High-Low)</option>
+<option>Sort by: Mohs Hardness</option>
+</select>
+</div>
+</div>
+<!-- Product Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant group hover:border-primary transition-all duration-300">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A professional studio product shot of several high-quality, deep purple faceted amethyst stones arranged on a pristine white marble surface. The lighting is bright and clinical, emphasizing the internal clarity and precise geometric facets of the stones. A subtle shadow falls underneath, highlighting the physical presence of the gemstones. The overall aesthetic is clean, corporate, and focuses on technical excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYUgr6LQ56Mf77C88C3w1sz5CjuqUtMWKNzW0UYUxhMreDL6Oa_nXUOOBrsWG8D0qytYQDKfn0a08S21rPv-SHD8OZ29b3yIVroyGSY1gdyv7KLFjvziOXxdxa4B-Z_UP7HuQ4kXpStDF7NxiZSHfbttICj8zbxRocAKHuaL6NdKmShweHtN_WCucLoH24e3j89v0Ac6nExZwKjfp_Oc3MprSVreE7ZF5_qB9jPIbZjYj1cL9V8MheXA"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-surface/90 backdrop-blur px-2 py-0.5 font-label-caps text-[10px] text-primary border border-outline-variant">NATURAL</span>
+<span class="bg-success-emerald text-white px-2 py-0.5 font-label-caps text-[10px]">IN STOCK</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-technical-data text-[11px] text-stone-gray mb-1">CODE: AMY-OCT-042</p>
+<h3 class="font-headline-sm text-headline-sm text-primary">Amethyst Octagon Facet</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">bookmark</button>
+</div>
+<table class="w-full text-technical-data border-t border-outline-variant pt-2">
+<tbody><tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Material</td>
+<td class="py-1.5 text-right font-medium">Brazillian Amethyst</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Dimensions</td>
+<td class="py-1.5 text-right font-medium">10 x 8 x 5 mm</td>
+</tr>
+<tr>
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">MOQ</td>
+<td class="py-1.5 text-right font-medium">50 Units</td>
+</tr>
+</tbody></table>
+<button class="w-full bg-amethyst-deep text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                            Request Custom Quote
+                            <span class="material-symbols-outlined text-sm">request_quote</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant group hover:border-primary transition-all duration-300">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up macro photography of a set of smoky quartz crystal spheres on a brushed metal tray. The spheres show varying degrees of transparency from dark charcoal to light tan. The setting is an industrial design lab with technical calipers and a digital scale visible in the blurred background. The mood is precise and focused on material science and batch manufacturing quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaPwo9UdnmXFbMq0sVqKob3_3K4wMmS3WybnQ3nfDqq9aiLJo667bDj7E8gn3VmQhS7pDaXODXpMpzsIKcxgNVz7LZjBf6VJf91TiL0bQUDWz71F_ncwQZ7takPPflszd4rTsvNV5XlBnuNBfld638yPX7w6TFC6xkarhIhEOQ124RycOGbXiTq4peHFFbXkSERTbZ4Q4d4C0uRNZgKKXoK-fFXaJBvQpny9LRs48Sz6MhIlwowm9NbQ"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-surface/90 backdrop-blur px-2 py-0.5 font-label-caps text-[10px] text-primary border border-outline-variant">NATURAL</span>
+<span class="bg-warning-amber text-white px-2 py-0.5 font-label-caps text-[10px]">LOW STOCK</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-technical-data text-[11px] text-stone-gray mb-1">CODE: SMQ-SPH-012</p>
+<h3 class="font-headline-sm text-headline-sm text-primary">Smoky Quartz Spheres</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">bookmark</button>
+</div>
+<table class="w-full text-technical-data border-t border-outline-variant pt-2">
+<tbody><tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Material</td>
+<td class="py-1.5 text-right font-medium">Grade AA Quartz</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Diameter</td>
+<td class="py-1.5 text-right font-medium">12.0 mm (鍗?.05)</td>
+</tr>
+<tr>
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">MOQ</td>
+<td class="py-1.5 text-right font-medium">1,000 Units</td>
+</tr>
+</tbody></table>
+<button class="w-full bg-amethyst-deep text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                            Request Custom Quote
+                            <span class="material-symbols-outlined text-sm">request_quote</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 (Highlighted Selection) -->
+<div class="bg-surface-container-lowest border-2 border-primary group relative shadow-lg">
+<div class="absolute -top-3 right-4 z-10 bg-primary text-white px-3 py-1 font-label-caps text-[10px] tracking-widest">BEST FOR DEVELOPMENT</div>
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detailed view of transparent clear quartz crystal points arranged in a geometric grid on a dark slate surface. Each crystal point is precisely oriented to show its termination. The lighting is dramatic, high-contrast, highlighting the sharp edges and internal crystalline structure. The image evokes a sense of engineering precision and high-end industrial sourcing for optical or decorative use." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjiJf1iPnIXohBvlcNe6ngmwbajvKdLtGRlw2utYtrbohh1fbqOvLpuRQYpnEoAb3tU8eWR4arspHHEsENGJToeJLzFJ0N_qeMg3DMvVXIGzjTNo-foyOo1sRr_UdrdQNEJyzX8O1T_Jz-4WVG5EDuEjdZ0Jmij7pULLZvZXKpvJHIvmGp5cMk_o8qhJNtGTzMTC_tjZs2aB563hK4UWl6mhmlqdDVyN_DMdF82X1GvsOu6ESWGRD-5w"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-surface/90 backdrop-blur px-2 py-0.5 font-label-caps text-[10px] text-primary border border-outline-variant">NATURAL</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-technical-data text-[11px] text-stone-gray mb-1">CODE: CLQ-PNT-990</p>
+<h3 class="font-headline-sm text-headline-sm text-primary">Clear Quartz Points</h3>
+</div>
+<button class="material-symbols-outlined text-primary fill-current" style="font-variation-settings: 'FILL' 1;">bookmark</button>
+</div>
+<table class="w-full text-technical-data border-t border-outline-variant pt-2">
+<tbody><tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Material</td>
+<td class="py-1.5 text-right font-medium">99.9% Optical Quartz</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Height</td>
+<td class="py-1.5 text-right font-medium">45 - 60 mm</td>
+</tr>
+<tr>
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">MOQ</td>
+<td class="py-1.5 text-right font-medium">Bulk Only (50kg+)</td>
+</tr>
+</tbody></table>
+<button class="w-full bg-primary text-on-primary py-3 font-label-caps text-label-caps hover:opacity-90 transition-all flex items-center justify-center gap-2">
+                            Request Custom Quote
+                            <span class="material-symbols-outlined text-sm">request_quote</span>
+</button>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant group hover:border-primary transition-all duration-300">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A detailed technical layout showing golden citrine cushion cut gemstones on a drafting table next to a set of professional technical drawings and a jeweler's loupe. The scene is bright and airy with soft morning light from a large window. The aesthetic emphasizes the intersection of natural beauty and human technical craftsmanship in jewelry design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlmFtxW4bvgYooHszGsNmTvqUewpdwkFwflR5K2Cm1GoVriaf48e9n2-frclW0XV6lpt_m8CsUla_KJ1v8lUGAOEo0WG8Wpmh75B3Am8zeN1Mjyqu0bSwjKma9nrdxJ4N9-C-idhnrEZBHDMFcqnDewvVjCa2VIyq3EYhmSdLRsEyyJz4o6_bOYc1j6mXaO8JAyv8eqYns_szNA1LWWJw1BrwCuBsyk_xos_sJr0qZ5Q22hVz64vbo8Q"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-surface/90 backdrop-blur px-2 py-0.5 font-label-caps text-[10px] text-primary border border-outline-variant">HEAT TREATED</span>
+<span class="bg-success-emerald text-white px-2 py-0.5 font-label-caps text-[10px]">IN STOCK</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-technical-data text-[11px] text-stone-gray mb-1">CODE: CIT-CSN-005</p>
+<h3 class="font-headline-sm text-headline-sm text-primary">Citrine Cushion Cut</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">bookmark</button>
+</div>
+<table class="w-full text-technical-data border-t border-outline-variant pt-2">
+<tbody><tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Color Tone</td>
+<td class="py-1.5 text-right font-medium">Deep Honey</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Dimensions</td>
+<td class="py-1.5 text-right font-medium">6 x 6 mm</td>
+</tr>
+<tr>
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">MOQ</td>
+<td class="py-1.5 text-right font-medium">200 Units</td>
+</tr>
+</tbody></table>
+<button class="w-full bg-amethyst-deep text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                            Request Custom Quote
+                            <span class="material-symbols-outlined text-sm">request_quote</span>
+</button>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-surface-container-lowest border border-outline-variant group hover:border-primary transition-all duration-300">
+<div class="relative overflow-hidden aspect-square">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A clean, minimalist shot of various industrial-grade crystal blanks and rough cut blocks of smoky quartz. The pieces are arranged on a dark grey felt background with a stainless steel ruler for scale. The image looks professional and technical, suitable for a B2B industrial sourcing portal. Lighting is uniform and shadows are soft." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkGgp4uCjt8B0ScqtjM758pT7dabBLXx1Ff0CzfuN1clih1lbdT1K7il6wAdY7WB_449hz0dzN5TnC99cNA-u6fPYnlbMmMQBrD2dQiYtXNwQD9MikEGOXloOK2qFNRzx95NG47lmfqQpdEICaXQosYwOQkOW52paKBZo5C1gwTAjuFkZoFqb5wLQQYcE7iABiJh0d3A0dS88MJ_TXGemy01q3JAUDSUnSHRpzsSzuf0fnIqX3JDR59w"/>
+<div class="absolute top-3 left-3 flex gap-2">
+<span class="bg-surface/90 backdrop-blur px-2 py-0.5 font-label-caps text-[10px] text-primary border border-outline-variant">NATURAL</span>
+</div>
+</div>
+<div class="p-4 space-y-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-technical-data text-[11px] text-stone-gray mb-1">CODE: RAW-SMQ-BLK</p>
+<h3 class="font-headline-sm text-headline-sm text-primary">Industrial Quartz Blanks</h3>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary">bookmark</button>
+</div>
+<table class="w-full text-technical-data border-t border-outline-variant pt-2">
+<tbody><tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Form Factor</td>
+<td class="py-1.5 text-right font-medium">Rough Block</td>
+</tr>
+<tr class="border-b border-surface-container">
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">Weight Range</td>
+<td class="py-1.5 text-right font-medium">500g - 2kg</td>
+</tr>
+<tr>
+<td class="py-1.5 text-stone-gray uppercase text-[10px]">MOQ</td>
+<td class="py-1.5 text-right font-medium">100kg</td>
+</tr>
+</tbody></table>
+<button class="w-full bg-amethyst-deep text-on-primary py-3 font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center justify-center gap-2">
+                            Request Custom Quote
+                            <span class="material-symbols-outlined text-sm">request_quote</span>
+</button>
+</div>
+</div>
+<!-- Empty "Custom Order" Placeholder -->
+<div class="bg-surface border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-8 text-center group cursor-pointer hover:bg-surface-container-low transition-all">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-stone-gray text-3xl">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Can't find your spec?</h3>
+<p class="text-technical-data text-on-surface-variant mb-6">Our facility in Donghai offers custom cutting, drilling, and calibration for proprietary designs.</p>
+<button class="text-label-caps font-label-caps text-primary border-b border-primary pb-1 hover:opacity-70">Start Development Wizard</button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-12 flex items-center justify-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-primary text-on-primary rounded font-technical-data">1</button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container rounded font-technical-data">2</button>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container rounded font-technical-data">3</button>
+<span class="w-10 h-10 flex items-center justify-center">...</span>
+<button class="w-10 h-10 flex items-center justify-center hover:bg-surface-container rounded font-technical-data">12</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center border border-outline-variant rounded hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container border-t border-outline-variant dark:border-outline">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed mb-4">DONGHAI CRYSTAL</div>
+<p class="text-body-md text-on-surface-variant mb-4">Professional precision sourcing and technical gemstone manufacturing based in China's crystal capital.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-[10px]" href="#">WhatsApp</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-[10px]" href="#">Email</a>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">RESOURCES</span>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Material Disclosures</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Compliance Standards</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Shipping &amp; Logistics</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">LEGAL</span>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Sourcing Integrity</a>
+</div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">TECHNICAL PORTAL</span>
+<p class="text-technical-data text-on-surface-variant mb-2">Access your custom blueprints and batch tracking in the secure client portal.</p>
+<button class="bg-primary text-on-primary py-2 px-4 rounded font-label-caps text-[11px] self-start hover:opacity-90">Log In to Portal</button>
+</div>
+</div>
+<div class="px-margin-desktop py-4 border-t border-outline-variant/30 flex justify-center">
+<p class="text-technical-data text-stone-gray">婕?2024 Donghai Crystal. Professional Precision Sourcing. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        // Micro-interaction for filter checkboxes
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const parent = this.closest('label');
+                if(this.checked) {
+                    parent.classList.add('text-primary');
+                } else {
+                    parent.classList.remove('text-primary');
+                }
+            });
+        });
+
+        // Sticky filter handling for mobile (simplified toggle)
+        const filterToggle = document.createElement('button');
+        filterToggle.className = 'md:hidden fixed bottom-6 right-6 bg-primary text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center z-[60]';
+        filterToggle.innerHTML = '<span class="material-symbols-outlined">filter_list</span>';
+        document.body.appendChild(filterToggle);
+        
+        filterToggle.addEventListener('click', () => {
+            document.querySelector('aside').classList.toggle('hidden');
+            document.querySelector('aside').classList.toggle('fixed');
+            document.querySelector('aside').classList.toggle('inset-0');
+            document.querySelector('aside').classList.toggle('bg-white');
+            document.querySelector('aside').classList.toggle('z-[70]');
+            document.querySelector('aside').classList.toggle('p-6');
+            document.querySelector('aside').classList.toggle('overflow-y-auto');
+        });
+    </script>
+<script src="/site-nav.js"></script></body></html>
