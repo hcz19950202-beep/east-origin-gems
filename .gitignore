@@ -1,0 +1,10 @@
+# Historical backups and original Stitch exports are retained locally only.
+legacy-v1/
+legacy-v2/
+stitch-source/
+stitch-preview/
+
+# Local tooling artifacts.
+node_modules/
+.DS_Store
+
