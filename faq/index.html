@@ -175,7 +175,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <style>
         @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,600&display=swap');
-        
+
         .accordion-content {
             transition: max-height 0.3s ease-out, opacity 0.3s ease-out, padding 0.3s ease-out;
             max-height: 0;
@@ -184,7 +184,7 @@
             padding-top: 0;
             padding-bottom: 0;
         }
-        
+
         .accordion-item.active .accordion-content {
             max-height: 500px;
             opacity: 1;
@@ -196,6 +196,16 @@
             transform: rotate(180deg);
         }
     </style>
+<!-- EOG_I18N_ALTERNATES_START -->
+<link rel="alternate" hreflang="en" href="https://east-origin-gems.pages.dev/faq/"/>
+<link rel="alternate" hreflang="fr" href="https://east-origin-gems.pages.dev/fr/faq/"/>
+<link rel="alternate" hreflang="de" href="https://east-origin-gems.pages.dev/de/faq/"/>
+<link rel="alternate" hreflang="es" href="https://east-origin-gems.pages.dev/es/faq/"/>
+<link rel="alternate" hreflang="pt" href="https://east-origin-gems.pages.dev/pt/faq/"/>
+<link rel="alternate" hreflang="ar" href="https://east-origin-gems.pages.dev/ar/faq/"/>
+<link rel="alternate" hreflang="ru" href="https://east-origin-gems.pages.dev/ru/faq/"/>
+<link rel="alternate" hreflang="x-default" href="https://east-origin-gems.pages.dev/faq/"/>
+<!-- EOG_I18N_ALTERNATES_END -->
 </head>
 <body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col">
 <!-- TopNavBar (Shared Component) -->
@@ -332,17 +342,17 @@
 <script>
         document.addEventListener('DOMContentLoaded', () => {
             const accordionButtons = document.querySelectorAll('.accordion-item button');
-            
+
             accordionButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     const item = button.parentElement;
                     const isActive = item.classList.contains('active');
-                    
+
                     // Close all others
                     document.querySelectorAll('.accordion-item').forEach(otherItem => {
                         otherItem.classList.remove('active');
                     });
-                    
+
                     // Toggle current
                     if (!isActive) {
                         item.classList.add('active');
@@ -351,4 +361,5 @@
             });
         });
     </script>
-<script src="/site-nav.js"></script></body></html>
+<script src="/site-nav.js"></script><script src="/i18n.js"></script>
+</body></html>

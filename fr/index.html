@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="East Origin Gems — Approvisionnement, développement, gestion de la qualité et coordination des exportations de composants en cristaux naturels basés à Donghai.">
+  <title>East Origin Gems · Aperçu amélioré de la chaîne d'approvisionnement</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1a1c1e;--muted:#59545b;--primary:#33253b;--primary-2:#4a3b52;
+      --smoky:#6f645e;--line:#d4cdd4;--soft:#f3f2f5;--soft-2:#e9e7ec;
+      --paper:#fbfafc;--white:#fff;--green:#2d5a43;--amber:#9b6200;--red:#9a2e2e;
+      --serif:"Source Serif 4",Georgia,serif;--sans:"Hanken Grotesk",Arial,sans-serif;
+      --mono:"JetBrains Mono",monospace;--max:1240px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button,a,.card,.evidence{transition:.2s ease}
+    img{display:block;max-width:100%}
+    .wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .eyebrow,.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--primary-2)}
+    .eyebrow:before{content:"";width:7px;height:7px;background:var(--green);border-radius:50%}
+    h1,h2,h3{font-family:var(--serif);line-height:1.14;margin:0}
+    h1{font-size:clamp(42px,5vw,68px);letter-spacing:-.035em}
+    h2{font-size:clamp(31px,3.6vw,48px);letter-spacing:-.025em}
+    h3{font-size:23px}
+    p{margin:0}
+    .lead{font-size:19px;color:var(--muted);max-width:720px}
+    .muted{color:var(--muted)}
+    .section{padding:96px 0}
+    .section.alt{background:var(--soft);border-block:1px solid var(--line)}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:40px}
+    .section-head>div:first-child{max-width:780px}
+    .section-head .lead{margin-top:14px}
+    .btn{border:1px solid var(--primary);background:transparent;color:var(--primary);padding:13px 19px;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;font-weight:650;min-height:48px}
+    .btn:hover{background:var(--soft-2);transform:translateY(-1px)}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.primary:hover{background:var(--primary-2)}
+    .btn.ghost{border-color:transparent;padding-inline:6px}
+    .btn.small{padding:9px 13px;min-height:40px;font-size:14px}
+    .btn:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #bba9c4;outline-offset:3px}
+    .material-symbols-outlined{font-size:19px}
+    .prototype{background:#eee8f1;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;text-align:center;padding:7px 18px;color:var(--primary-2)}
+    header{position:sticky;top:0;z-index:40;background:rgba(251,250,252,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font:700 23px/1 var(--serif);color:var(--primary);white-space:nowrap}
+    .navlinks{display:flex;align-items:center;gap:6px}
+    .navlinks a{padding:10px 12px;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{background:var(--soft);color:var(--primary)}
+    .nav-actions{display:flex;gap:10px;align-items:center}
+    .menu-btn{display:none;background:none;border:0;padding:8px}
+    .hero{padding:88px 0 72px}
+    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+    .hero h1{margin:19px 0 24px}
+    .hero .lead{margin-bottom:34px}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-note{margin-top:24px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+    .hero-media{position:relative;border:1px solid var(--line);background:#fff;padding:10px}
+    .hero-media img{width:100%;aspect-ratio:1/1;object-fit:cover}
+    .measure{position:absolute;left:30px;bottom:30px;background:rgba(255,255,255,.94);border:1px solid var(--line);padding:14px 16px;font-family:var(--mono);font-size:11px}
+    .measure strong{display:block;color:var(--primary);font-size:14px;margin-top:4px}
+    .proof-strip{border-block:1px solid var(--line);background:#fff}
+    .proof-grid{display:grid;grid-template-columns:repeat(5,1fr)}
+    .proof{padding:20px 16px;border-right:1px solid var(--line);display:flex;gap:10px;align-items:center;font:500 11px/1.4 var(--mono);text-transform:uppercase}
+    .proof:last-child{border:0}
+    .proof span{color:var(--green)}
+    .partner-flow{display:grid;grid-template-columns:1fr 64px 1.15fr 64px 1fr;align-items:stretch}
+    .story-visual{display:grid;grid-template-columns:1.35fr .65fr;border:1px solid var(--line);background:#fff;margin-bottom:18px;overflow:hidden}
+    .story-visual img{width:100%;height:100%;min-height:270px;object-fit:cover}
+    .story-caption{padding:28px;display:flex;flex-direction:column;justify-content:flex-end}
+    .story-caption h3{margin:12px 0 8px}
+    .image-note{font:500 9px/1.5 var(--mono);text-transform:uppercase;color:var(--muted)}
+    .flow-box{border:1px solid var(--line);background:#fff;padding:28px}
+    .flow-box.primary{border:2px solid var(--primary);background:#f8f4fa}
+    .flow-box h3{margin:12px 0}
+    .flow-box ul{margin:14px 0 0;padding-left:19px;color:var(--muted)}
+    .arrow{display:grid;place-items:center;color:var(--primary)}
+    .specialists{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+    .tag{font:500 10px/1.3 var(--mono);padding:8px;background:#fff;border:1px solid var(--line);text-align:center;text-transform:uppercase}
+    .cluster{background:var(--primary);color:#fff}
+    .cluster .eyebrow,.cluster .lead,.cluster .muted{color:#e5dce9}
+    .cluster .eyebrow:before{background:#a8d3ba}
+    .cluster-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:start}
+    .cluster-aside{display:grid;gap:16px}
+    .cluster-photo{margin:0;border:1px solid #76637e;background:#241a2a;overflow:hidden}
+    .cluster-photo img{display:block;width:100%;aspect-ratio:16/7;object-fit:cover}
+    .cluster-photo figcaption{padding:11px 14px;color:#d8c8df;font:500 9px/1.5 var(--mono);text-transform:uppercase}
+    .cluster-stats{display:grid;grid-template-columns:1fr 1fr;border:1px solid #76637e}
+    .stat{padding:28px;border-right:1px solid #76637e;border-bottom:1px solid #76637e}
+    .stat:nth-child(2n){border-right:0}.stat:nth-last-child(-n+2){border-bottom:0}
+    .stat strong{font:600 42px/1 var(--serif);display:block;margin-bottom:9px}
+    .stat span{font:500 10px/1.4 var(--mono);text-transform:uppercase;color:#d8c8df}
+    .source-note{font:400 10px/1.55 var(--mono);color:#c9bbcf;margin-top:18px}
+    .source-note a{text-decoration:underline}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .process-media{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+    .process-photo{margin:0;border:1px solid var(--line);background:#fff;overflow:hidden}
+    .process-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+    .process-photo figcaption{padding:12px 14px;font:500 9px/1.45 var(--mono);text-transform:uppercase;color:var(--muted)}
+    .step{background:#fff;border:1px solid var(--line);padding:26px;min-height:245px}
+    .step-no{font:600 12px var(--mono);color:var(--primary-2)}
+    .step h3{margin:24px 0 12px}
+    .step dl{margin:18px 0 0;padding-top:15px;border-top:1px solid var(--line)}
+    .step dt{font:500 10px var(--mono);text-transform:uppercase;color:var(--muted)}
+    .step dd{margin:3px 0 12px;font-size:14px}
+    .params{display:grid;grid-template-columns:1.15fr .85fr;gap:24px}
+    .param-table{border:1px solid var(--line);background:#fff}
+    .param-row{display:grid;grid-template-columns:1.25fr 1fr;border-bottom:1px solid var(--line)}
+    .param-row:last-child{border:0}
+    .param-row>div{padding:16px 18px}
+    .param-row>div:first-child{font:500 11px var(--mono);text-transform:uppercase;color:var(--muted);background:#faf9fb}
+    .disclaimer{border:1px solid #c28e3a;background:#fff9ee;padding:24px}
+    .disclaimer h3{font-size:20px;margin-bottom:10px}
+    .disclaimer p{color:#6e5430}
+    .scenario{border:1px solid var(--line);background:#fff}
+    .scenario-top{display:grid;grid-template-columns:1fr .72fr}
+    .scenario-copy{padding:42px}
+    .scenario-copy h2{margin:14px 0 18px}
+    .scenario-image{min-height:410px;background:
+      linear-gradient(rgba(51,37,59,.08),rgba(51,37,59,.08)),
+      url("assets/stitch-generated/07-design-development.jpg") center/cover}
+    .scenario-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+    .scenario-block{padding:25px;border-right:1px solid var(--line)}
+    .scenario-block:last-child{border:0}
+    .scenario-block h3{font-size:18px;margin:10px 0}
+    .scenario-block p{font-size:14px;color:var(--muted)}
+    .demo-label{display:inline-block;padding:5px 8px;background:#efe6f2;color:var(--primary);font:600 9px var(--mono);text-transform:uppercase}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{border:1px solid var(--line);background:#fff}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(51,37,59,.09)}
+    .product-image{aspect-ratio:4/3;background:var(--soft);overflow:hidden;position:relative}
+    .product-image img{width:100%;height:100%;object-fit:cover}
+    .status{position:absolute;left:12px;top:12px;padding:7px 9px;background:#fff;border:1px solid var(--line);font:600 9px var(--mono);text-transform:uppercase}
+    .status.green{color:var(--green)}
+    .card-body{padding:22px}
+    .code{font:500 10px var(--mono);color:var(--muted);text-transform:uppercase}
+    .card h3{margin:8px 0 16px}
+    .specs{display:grid;grid-template-columns:1fr 1fr;border-block:1px solid var(--line);margin-bottom:18px}
+    .spec{padding:11px 0}
+    .spec small{display:block;font:500 9px var(--mono);text-transform:uppercase;color:var(--muted)}
+    .spec strong{font-size:14px}
+    .card-actions{display:flex;gap:8px;flex-wrap:wrap}
+    .evidence-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .evidence{border:1px solid var(--line);background:#fff;padding:23px;cursor:pointer;min-height:180px}
+    .evidence:hover{border-color:var(--primary);background:#faf7fb}
+    .evidence .material-symbols-outlined{font-size:30px;color:var(--primary-2)}
+    .evidence h3{font-size:18px;margin:25px 0 8px}
+    .evidence p{font-size:13px;color:var(--muted)}
+    .document-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:28px}
+    .document{border:1px solid var(--line);background:#fff;padding:28px}
+    .doc-head{display:flex;justify-content:space-between;gap:20px;padding-bottom:15px;border-bottom:2px solid var(--primary)}
+    .doc-head h3{font-size:20px}
+    .document table{width:100%;border-collapse:collapse;margin-top:15px;font:12px/1.45 var(--mono)}
+    .document td{padding:10px;border-bottom:1px solid var(--line)}
+    .document td:first-child{color:var(--muted);width:44%}
+    .inquiry{background:var(--primary);color:#fff}
+    .inquiry-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:60px}
+    .inquiry .eyebrow,.inquiry .lead{color:#e6ddeb}
+    .inquiry .eyebrow:before{background:#a8d3ba}
+    .contact-list{display:grid;gap:14px;margin-top:30px}
+    .contact-line{display:flex;gap:12px;align-items:center;color:#e6ddeb}
+    form{background:#fff;color:var(--ink);padding:32px}
+    .fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    label{display:block;font:500 10px var(--mono);text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+    input,select,textarea{width:100%;border:1px solid var(--line);background:#fff;padding:12px;color:var(--ink);border-radius:0}
+    textarea{min-height:110px;resize:vertical}
+    .full{grid-column:1/-1}
+    .drop{border:2px dashed var(--line);padding:22px;text-align:center;cursor:pointer;background:#faf9fb}
+    .drop:hover{border-color:var(--primary)}
+    .drop input{display:none}
+    .drop strong{display:block}
+    .drop small{display:block;color:var(--muted);margin-top:4px}
+    .form-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:20px}
+    .privacy{font-size:12px;color:var(--muted);max-width:380px}
+    .success{display:none;background:#e7f2eb;border:1px solid #78a58a;color:#234b34;padding:18px;margin-top:18px}
+    footer{border-top:1px solid var(--line);padding:48px 0;background:#eeedf0}
+    .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:34px}
+    footer h4{font:600 11px var(--mono);text-transform:uppercase;margin:0 0 14px}
+    footer a,footer p{display:block;color:var(--muted);font-size:14px;margin:7px 0}
+    .modal{display:none;position:fixed;inset:0;z-index:80;background:rgba(16,14,18,.62);padding:24px;align-items:center;justify-content:center}
+    .modal.open{display:flex}
+    .modal-card{background:#fff;width:min(720px,100%);max-height:90vh;overflow:auto;border:1px solid var(--line);padding:30px}
+    .modal-head{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:22px}
+    .icon-btn{border:1px solid var(--line);background:#fff;width:42px;height:42px;cursor:pointer}
+    .modal-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .modal-list div{background:var(--soft);padding:15px}
+    .modal-list small{font:500 9px var(--mono);text-transform:uppercase;color:var(--muted);display:block}
+    @media(max-width:1050px){
+      .navlinks{display:none}.menu-btn{display:block}.nav.open .navlinks{display:flex;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px;flex-direction:column;border-bottom:1px solid var(--line)}
+      .hero-grid,.cluster-grid,.params,.inquiry-grid{grid-template-columns:1fr}
+      .story-visual{grid-template-columns:1fr}
+      .story-visual img{min-height:240px}
+      .process-media{grid-template-columns:1fr 1fr}
+      .hero-media{max-width:650px}.partner-flow{grid-template-columns:1fr}.arrow{height:48px;transform:rotate(90deg)}
+      .steps{grid-template-columns:1fr 1fr}.evidence-grid{grid-template-columns:1fr 1fr}
+      .scenario-top{grid-template-columns:1fr}.scenario-grid{grid-template-columns:1fr 1fr}.scenario-block:nth-child(2){border-right:0}.scenario-block:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:720px){
+      .wrap{width:min(calc(100% - 28px),var(--max))}.section{padding:70px 0}.nav{height:68px}
+      .nav-actions .btn.ghost{display:none}.nav-actions .btn.primary{display:none}
+      .hero{padding-top:58px}.hero-grid{gap:38px}.proof-grid{grid-template-columns:1fr 1fr}.proof:nth-child(2n){border-right:0}.proof:last-child{grid-column:1/-1}
+      .cluster-stats,.steps,.cards,.evidence-grid,.document-grid,.fields,.footer-grid,.process-media{grid-template-columns:1fr}
+      .stat{border-right:0!important;border-bottom:1px solid #76637e!important}.stat:last-child{border-bottom:0!important}
+      .scenario-grid{grid-template-columns:1fr}.scenario-block{border-right:0;border-bottom:1px solid var(--line)!important}.scenario-block:last-child{border-bottom:0!important}
+      .section-head{display:block}.section-head .btn{margin-top:20px}.param-row{grid-template-columns:1fr}.param-row>div:first-child{padding-bottom:4px}
+      .form-foot{align-items:stretch;flex-direction:column}.form-foot .btn{width:100%}.modal-list{grid-template-columns:1fr}
+    }
+  </style>
+<!-- EOG_I18N_ALTERNATES_START -->
+<link rel="alternate" hreflang="en" href="https://east-origin-gems.pages.dev/">
+<link rel="alternate" hreflang="fr" href="https://east-origin-gems.pages.dev/fr/">
+<link rel="alternate" hreflang="de" href="https://east-origin-gems.pages.dev/de/">
+<link rel="alternate" hreflang="es" href="https://east-origin-gems.pages.dev/es/">
+<link rel="alternate" hreflang="pt" href="https://east-origin-gems.pages.dev/pt/">
+<link rel="alternate" hreflang="ar" href="https://east-origin-gems.pages.dev/ar/">
+<link rel="alternate" hreflang="ru" href="https://east-origin-gems.pages.dev/ru/">
+<link rel="alternate" hreflang="x-default" href="https://east-origin-gems.pages.dev/">
+<!-- EOG_I18N_ALTERNATES_END -->
+<link rel="canonical" href="https://east-origin-gems.pages.dev/fr/"></head>
+<body>
+  <header>
+    <div class="wrap nav" id="nav">
+      <a class="brand" href="/fr/">East Origin Gems</a>
+      <nav class="navlinks" aria-label="Navigation principale">
+        <a href="/fr/solutions/">Solutions</a>
+        <a href="/fr/products/">Produits</a>
+        <a href="/fr/custom-development/">Développement personnalisé</a>
+        <a href="/fr/samples/">Échantillons</a>
+        <a href="/fr/quality/">Qualité</a>
+        <a href="/fr/about-donghai/">À propos</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost small" type="button" data-toast="Language versions will be connected after the English content is approved.">
+          <span class="material-symbols-outlined">language</span> EN
+        </button>
+        <a class="btn primary small" href="/fr/design-review/"><span class="material-symbols-outlined">upload_file</span>Télécharger un design</a>
+        <button class="menu-btn" type="button" aria-label="Basculer la navigation" id="menuButton"><span class="material-symbols-outlined">menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Partenaire d'approvisionnement et de développement de cristaux Donghai</span>
+          <h1>Composants en cristal naturel personnalisés pour les designers indépendants, les marques de bijoux et les grossistes.</h1>
+          <p class="lead">Apportez-nous un croquis, une image de référence ou un échantillon physique. Nous coordonnons l'approvisionnement en matières premières, la découpe spécialisée, le perçage, le polissage, le développement d'échantillons, l'inspection qualité, l'emballage et l'exportation, vous offrant ainsi un partenaire Donghai responsable, de la conception aux commandes répétées.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="/fr/design-review/">Commencez votre conception <span class="material-symbols-outlined">upload_file</span></a>
+            <a class="btn" href="/fr/products/">Explorer les composants</a>
+            <a class="btn ghost" href="/fr/samples/">Demander des échantillons <span class="material-symbols-outlined">arrow_forward</span></a>
+          </div>
+          <p class="hero-note">Conçu pour les créateurs de bijoux indépendants, les marques de boutique et les acheteurs en gros · Développement en petits lots et production répétée pris en charge.</p>
+        </div>
+        <div class="hero-media">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBsALQlkMZGBETdPQImtZmH3ZYSS3dPJMBygeeNP2MYOJ5Q2cev00mqwoLjaLPB4W1LbTt-bBBHWoR4WEimfLI0MzLIR4KJOAPRba3oenjW1rfhrJRg6vj5kAFl-AXj6rJQd3EI0R2DAIHGcwmKybtoeueWMlYF5aQchrA3h-CcgmRELMkdX68vntfyO5gBO7U7LScWa-O5uWjP1thL_6w15Tw4pz10HXheISa5zLRfJGwOTIGAmwuZbNnWmL9bGaRSB-avmPzGq35" alt="Un composant cristallin à facettes mesuré avec un pied à coulisse numérique">
+          <div class="measure">REVUE TECHNIQUE<strong>Matériau · Géométrie · Perçage · Finition</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip">
+      <div class="wrap proof-grid">
+        <div class="proof"><span class="material-symbols-outlined">schedule</span>Examen de faisabilité de 48 heures</div>
+        <div class="proof"><span class="material-symbols-outlined">view_in_ar</span>Développement en petits lots</div>
+        <div class="proof"><span class="material-symbols-outlined">description</span>Divulgation des matériaux par lots</div>
+        <div class="proof"><span class="material-symbols-outlined">public</span>Expédition mondiale d’échantillons</div>
+        <div class="proof"><span class="material-symbols-outlined">hub</span>Réseau d'approvisionnement de Donghai</div>
+      </div>
+    </div>
+
+    <section class="section" id="partner">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Pourquoi un partenaire supply chain ?</span>
+            <h2>Ateliers spécialisés. Un niveau de coordination responsable.</h2>
+            <p class="lead">La spécialisation d’une usine est précieuse, mais une collection de bijoux nécessite souvent plusieurs processus distincts. Nous coordonnons ces capacités via un seul dossier de projet et un seul point de contact.</p>
+          </div>
+        </div>
+        <figure class="story-visual">
+          <img src="assets/stitch-generated/01-sourcing-coordination.jpg" alt="Espace de travail illustratif de coordination de l'approvisionnement avec des échantillons de cristaux naturels, des dessins, des pieds à coulisse et des documents d'expédition">
+          <figcaption class="story-caption">
+            <span class="image-note">Flux de travail de sourcing illustratif</span>
+            <h3>Un tableau. Un enregistrement de projet. Plusieurs capacités spécialisées.</h3>
+            <p class="muted">Un partenaire d'approvisionnement maintient les matériaux, les mesures, les décisions en matière d'échantillons et les exigences d'expédition connectés tout au long du projet.</p>
+          </figcaption>
+        </figure>
+        <div class="partner-flow">
+          <article class="flow-box">
+            <span class="mono">Modèle à atelier unique</span>
+            <h3>Capacité approfondie dans un processus limité</h3>
+            <ul>
+              <li>Fort dans un produit ou une technique</li>
+              <li>Couverture limitée dans une collection</li>
+              <li>L'acheteur coordonne les autres étapes</li>
+            </ul>
+          </article>
+          <div class="arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+          <article class="flow-box primary">
+            <span class="mono">East Origin Gems</span>
+            <h3>Un seul partenaire d'approvisionnement et de gestion de la qualité</h3>
+            <p class="muted">Nous traduisons les exigences, adaptons les capacités des spécialistes, gérons les échantillons, suivons la production, consolidons les dossiers d’inspection et coordonnons l’exportation.</p>
+            <div class="specialists">
+              <span class="tag">Facettage</span><span class="tag">Forage</span><span class="tag">Polissage</span>
+              <span class="tag">Cabochons</span><span class="tag">Sculpture</span><span class="tag">Emballage</span>
+            </div>
+          </article>
+          <div class="arrow"><span class="material-symbols-outlined">arrow_forward</span></div>
+          <article class="flow-box">
+            <span class="mono">Résultat de l'acheteur</span>
+            <h3>Une commande inspectée et prête à exporter</h3>
+            <ul>
+              <li>Une référence d'échantillon approuvée</li>
+              <li>Documentation consolidée des lots</li>
+              <li>Un contact pour la coordination des expéditions</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cluster" id="cluster">
+      <div class="wrap cluster-grid">
+        <div>
+          <span class="eyebrow">À l’intérieur de l’amas de cristal de Donghai</span>
+          <h2 style="margin:18px 0">Un vaste réseau industriel, mis à la disposition des acheteurs étrangers.</h2>
+          <p class="lead">La force de Donghai réside dans la concentration du commerce des matières premières, de la conception, de la transformation spécialisée, des ventes, de la logistique et du commerce transfrontalier. Notre rôle est de transformer cette profondeur en un flux de travail de projet contrôlé.</p>
+          <p class="source-note">Chiffres de l'industrie régionale communiqués par les autorités locales. Ces chiffres décrivent l'amas de cristaux de Donghai, et non les gemmes d'origine orientale. Sources : <a href="https://www.lyg.gov.cn/zglygzfmhwz/xwfbh/content/82fd5b60-f560-4328-abff-091f206a62f0.shtml" target="_blank" rel="noopener">Gouvernement municipal de Lianyungang</a> et <a href="https://www.jsrd.gov.cn/qwfb/d_sjfg/202512/t20251229_1191948.shtml" target="_blank" rel="noopener">Congrès populaire du Jiangsu</a>.</p>
+        </div>
+        <div class="cluster-aside">
+          <figure class="cluster-photo">
+            <img src="assets/stitch-generated/02-donghai-cluster.jpg" alt="Illustration d’un cluster organisé d’approvisionnement en cristal et du contexte d’un atelier spécialisé">
+            <figcaption>Vue illustrative d'un environnement d'approvisionnement organisé et d'atelier spécialisé</figcaption>
+          </figure>
+          <div class="cluster-stats">
+            <div class="stat"><strong>3,400+</strong><span>Entreprises régionales de transformation du cristal</span></div>
+            <div class="stat"><strong>300K</strong><span>Personnes liées à l’industrie régionale</span></div>
+            <div class="stat"><strong>46 milliards de yens</strong><span>Volume d’échanges du cluster déclaré pour 2024</span></div>
+            <div class="stat"><strong>Chaîne complète</strong><span>Sourcing · conception · transformation · logistique · export</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="workflow">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Coordination de projet de bout en bout</span>
+            <h2>Chaque étape produit quelque chose que l’acheteur peut examiner.</h2>
+          </div>
+          <a class="btn" href="/fr/design-review/">Démarrer une révision technique</a>
+        </div>
+        <div class="process-media" aria-label="Photographie illustrative du processus de projet">
+          <figure class="process-photo"><img src="assets/stitch-generated/03-cad-translation.jpg" alt="Traduction CAO illustrative et révision dimensionnelle"><figcaption>Traduction CAO · visuel illustratif</figcaption></figure>
+          <figure class="process-photo"><img src="assets/stitch-generated/04-lapidary-process-cn.jpg" alt="Illustration d'un artisan chinois Donghai polissant avec précision un composant en cristal naturel"><figcaption>Lapidaire de précision · visuel d'illustration</figcaption></figure>
+          <figure class="process-photo"><img src="assets/stitch-generated/05-quality-control.jpg" alt="Inspection visuelle et dimensionnelle de la qualité des lots"><figcaption>Inspection de lots · visuel illustratif</figcaption></figure>
+          <figure class="process-photo"><img src="assets/stitch-generated/06-export-packaging-cn.jpg" alt="Illustration d’une équipe chinoise de Donghai vérifiant un emballage de protection en cristal pour l’exportation"><figcaption>Préparation à l'exportation · visuel d'illustration</figcaption></figure>
+        </div>
+        <div class="steps">
+          <article class="step"><span class="step-no">01 / ADMISSION</span><h3>Examen des exigences</h3><p class="muted">Dessin, image de référence, échantillon physique, quantité cible et utilisation prévue.</p><dl><dt>Sortie</dt><dd>Résumé des exigences</dd><dt>L'acheteur confirme</dt><dd>Portée et priorités</dd></dl></article>
+          <article class="step"><span class="step-no">02 / MATÉRIEL</span><h3>Examen du matériel</h3><p class="muted">Variété de cristaux, statut naturel ou traité, portée visuelle et disponibilité.</p><dl><dt>Sortie</dt><dd>Projet d’information importante</dd><dt>L'acheteur confirme</dt><dd>Portée visuelle acceptable</dd></dl></article>
+          <article class="step"><span class="step-no">03 / FAISABILITÉ</span><h3>Correspondance spécialisée</h3><p class="muted">Géométrie, perçage, finition et tolérance évaluées par rapport aux capacités appropriées.</p><dl><dt>Sortie</dt><dd>Faisabilité et exemple de proposition</dd><dt>L'acheteur confirme</dt><dd>Itinéraire prototype</dd></dl></article>
+          <article class="step"><span class="step-no">04 / ÉCHANTILLON</span><h3>Développement d'échantillons</h3><p class="muted">Production de prototypes, comparaison, révisions et approbation finale de la référence.</p><dl><dt>Sortie</dt><dd>Exemple de dossier approuvé</dd><dt>L'acheteur confirme</dt><dd>Référence de production</dd></dl></article>
+          <article class="step"><span class="step-no">05 / RÉALISATION</span><h3>Suivi et inspection</h3><p class="muted">Avancement des lots, contrôles dimensionnels, tri visuel et vérification des quantités.</p><dl><dt>Sortie</dt><dd>Dossier d'inspection</dd><dt>L'acheteur confirme</dt><dd>Libération de l'expédition</dd></dl></article>
+          <article class="step"><span class="step-no">06 / EXPORTATION</span><h3>Emballage et expédition</h3><p class="muted">Emballage de protection, étiquettes de lots, liste de colisage, facture et coordination du transporteur.</p><dl><dt>Sortie</dt><dd>Exporter le pack de documents</dd><dt>L'acheteur reçoit</dt><dd>Fichiers de suivi et d'expédition</dd></dl></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Paramètres de développement typiques</span>
+            <h2>Plages de planification utiles avant confirmation technique.</h2>
+          </div>
+        </div>
+        <div class="params">
+          <div class="param-table">
+            <div class="param-row"><div>Accusé de réception de la demande</div><div>Dans un délai d'un jour ouvrable</div></div>
+            <div class="param-row"><div>Examen préliminaire de faisabilité</div><div>Généralement dans les 48 heures</div></div>
+            <div class="param-row"><div>Quantité de prototypes</div><div>Généralement 3 à 20 pièces</div></div>
+            <div class="param-row"><div>MOQ des composants standards</div><div>Généralement 100 à 300 pièces</div></div>
+            <div class="param-row"><div>MOQ personnalisé spécialisé</div><div>Généralement 300 à 500 pièces</div></div>
+            <div class="param-row"><div>Développement d’échantillons standards</div><div>Environ 7 à 15 jours ouvrables</div></div>
+            <div class="param-row"><div>Développement d'échantillons complexes</div><div>Environ 15 à 25 jours ouvrables</div></div>
+            <div class="param-row"><div>Production par lots après approbation</div><div>Généralement 15 à 30 jours</div></div>
+            <div class="param-row"><div>Fichiers pris en charge</div><div>JPG · PNG · PDF · DWG · DXF · STP · ÉTAPE</div></div>
+          </div>
+          <aside class="disclaimer">
+            <span class="demo-label">Plages indicatives</span>
+            <h3>Les conditions définitives suivent l’examen technique.</h3>
+            <p>Les délais et les quantités minimales varient selon la disponibilité des matériaux, la géométrie, le perçage, le processus de finition et la norme d'inspection. Les conditions définitives sont confirmées lors de l’examen technique et du devis écrit.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="wrap">
+        <article class="scenario">
+          <div class="scenario-top">
+            <div class="scenario-copy">
+              <span class="demo-label">Scénario de développement représentatif</span>
+              <h2>Du croquis d’un designer à un composant de pendentif en quartz fumé reproductible.</h2>
+              <p class="lead">Un flux de travail illustratif pour un designer indépendant développant une collection européenne en édition limitée. Il ne s’agit pas d’une réclamation client nommée ou complétée.</p>
+              <div class="hero-actions" style="margin-top:28px"><a class="btn primary" href="/fr/design-review/">Développer un composant similaire</a><a class="btn" href="/fr/design-review/">Demandez à un spécialiste de l'approvisionnement</a></div>
+            </div>
+            <div class="scenario-image" role="img" aria-label="Projet de développement de concepteur illustratif avec croquis, variantes de prototype et échantillon de référence approuvé" title="Flux de travail de développement de concepteurs illustratifs"></div>
+          </div>
+          <div class="scenario-grid">
+            <div class="scenario-block"><span class="mono">Exigence</span><h3>Pendentif hexagonal allongé</h3><p>Gamme de couleurs fumées contrôlée, bords polis sans danger pour la peau, perçage latéral et examen du prototype avant la production par lots.</p></div>
+            <div class="scenario-block"><span class="mono">Risque technique</span><h3>Écaillage près d'un bord étroit</h3><p>La position de perçage demandée réduit l'épaisseur du bord. La couleur naturelle, la clarté, les inclusions et le zonage varient également.</p></div>
+            <div class="scenario-block"><span class="mono">Plan de coordination</span><h3>Traduire, faire correspondre et prototyper</h3><p>Cotez l'esquisse, convenez de la portée visuelle, faites correspondre les spécialistes de la découpe et du perçage, puis comparez les variantes des prototypes.</p></div>
+            <div class="scenario-block"><span class="mono">Référence du lot</span><h3>Une norme physique approuvée</h3><p>Enregistrez les dimensions, la finition, la position de perçage et la portée visuelle, puis inspectez la production par rapport à la référence retenue.</p></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Points de départ des composants</span><h2>Partez d’une référence, puis développez la spécification requise.</h2></div>
+          <a class="btn" href="/fr/products/">Voir le catalogue technique</a>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="product-image"><span class="status green">Échantillon disponible</span><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYUgr6LQ56Mf77C88C3w1sz5CjuqUtMWKNzW0UYUxhMreDL6Oa_nXUOOBrsWG8D0qytYQDKfn0a08S21rPv-SHD8OZ29b3yIVroyGSY1gdyv7KLFjvziOXxdxa4B-Z_UP7HuQ4kXpStDF7NxiZSHfbttICj8zbxRocAKHuaL6NdKmShweHtN_WCucLoH24e3j89v0Ac6nExZwKjfp_Oc3MprSVreE7ZF5_qB9jPIbZjYj1cL9V8MheXA" alt="Composants en améthyste facettée"></div>
+            <div class="card-body"><span class="code">EOG-FAC-AMY-01</span><h3>Composants à facettes de précision</h3><div class="specs"><div class="spec"><small>Matériel</small><strong>Améthyste naturelle</strong></div><div class="spec"><small>Taille</small><strong>8 à 25 mm</strong></div><div class="spec"><small>MOQ typique</small><strong>100 à 300 pièces</strong></div><div class="spec"><small>Échantillon</small><strong>7 à 15 jours</strong></div></div><div class="card-actions"><a class="btn primary small" href="/fr/samples/">Demander un échantillon</a><a class="btn small" href="/fr/design-review/">Demander un devis</a><a class="btn ghost small" href="/fr/product/clear-quartz-cabochon/">Détails</a></div></div>
+          </article>
+          <article class="card">
+            <div class="product-image"><span class="status green">Échantillon disponible</span><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7YJTq42IAXwpo1uGIIcRmw77U6ep4oWaHr0RaSpNnQsgVLFiafeB_9AANmyaoOnoA6N-4DyS4YRQf8Y-a7_3As9OuIyrzlxqx0OK3F94GSKxuF36jDXZlV8nE_0KOUO-1qBUv5WuasQ_0hCBX5HzUhUO71V7dI4qr4pkRK3v4pT9_stdmOrtQgRxwuOOYJ7hQQ-2I3EoKJ94mac0zyWW-kMEw4vlD2V6OhVvFAFhtZg1xoEBzid3mQ" alt="Sphères de quartz fumé calibrées"></div>
+            <div class="card-body"><span class="code">EOG-SPH-SMQ-02</span><h3>Perles et sphères calibrées</h3><div class="specs"><div class="spec"><small>Matériel</small><strong>Quartz fumé</strong></div><div class="spec"><small>Taille</small><strong>6 à 16 millimètres</strong></div><div class="spec"><small>MOQ typique</small><strong>300 à 500 pièces</strong></div><div class="spec"><small>Échantillon</small><strong>7 à 15 jours</strong></div></div><div class="card-actions"><a class="btn primary small" href="/fr/samples/">Demander un échantillon</a><a class="btn small" href="/fr/design-review/">Demander un devis</a><a class="btn ghost small" href="/fr/products/">Détails</a></div></div>
+          </article>
+          <article class="card">
+            <div class="product-image"><span class="status">Fabriqué sur commande</span><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7QPY3tFILsxXLsJKgrxyil4Q29VONqzzptl5EXpVGW5wKVv0HCUukHHPouNXow0TAm-F5zOREcFK496lqX8OubMcinQcBIqE96ugA2EoOr7svWlM-N3crVNXJ6AFnoPTWzs747OQI8MrdDGvDqSLf7DuMgZ9s6jwG0mXFhQLLihBIar2HFSN_5DeX1jCVemci8KvcZa9uJOhmAtFqlbnTm25GhRsr_5dLlm0kWEdbaJLbVsPTLR11A" alt="Composants en quartz clair découpés sur mesure"></div>
+            <div class="card-body"><span class="code">EOG-CUS-CLR-03</span><h3>Composants percés personnalisés</h3><div class="specs"><div class="spec"><small>Matériel</small><strong>Quartz clair</strong></div><div class="spec"><small>Géométrie</small><strong>Basé sur un dessin</strong></div><div class="spec"><small>MOQ typique</small><strong>300 à 500 pièces</strong></div><div class="spec"><small>Échantillon</small><strong>15 à 25 jours</strong></div></div><div class="card-actions"><a class="btn primary small" href="/fr/samples/">Demander un échantillon</a><a class="btn small" href="/fr/design-review/">Demander un devis</a><a class="btn ghost small" href="/fr/custom-development/">Détails</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="quality">
+      <div class="wrap">
+        <div class="section-head">
+          <div><span class="eyebrow">Qualité et transparence</span><h2>Des preuves que les acheteurs peuvent inspecter, et non des promesses génériques.</h2><p class="lead">Chaque élément ci-dessous représente une catégorie de document, d'enregistrement ou d'image pouvant être jointe à un projet. Cliquez sur une carte pour inspecter le contenu souhaité.</p></div>
+        </div>
+        <div class="evidence-grid">
+          <article class="evidence" data-evidence="Material Disclosure Sheet" data-copy="Crystal variety; natural, synthetic or reconstructed status; heat treatment; dyeing; filling; coating; batch reference and disclosure date."><span class="material-symbols-outlined">description</span><h3>Divulgation importante</h3><p>Vérifier l’identité et le statut de traitement déclaré.</p></article>
+          <article class="evidence" data-evidence="Batch Identification Label" data-copy="Project code, raw-material batch, approved sample version, production quantity, packing quantity and shipment reference."><span class="material-symbols-outlined">qr_code_2</span><h3>Identification des lots</h3><p>Connectez l'expédition à son enregistrement de production.</p></article>
+          <article class="evidence" data-evidence="Dimensional Inspection Record" data-copy="Required dimensions, sampled measurements, drilling diameter and position, inspection date and release status."><span class="material-symbols-outlined">straighten</span><h3>Contrôle dimensionnel</h3><p>Examiner les mesures par rapport aux spécifications approuvées.</p></article>
+          <article class="evidence" data-evidence="Drilling and Finish Check" data-copy="Hole position, edge thickness, visible chipping, polishing standard, surface scratches and finish reference."><span class="material-symbols-outlined">precision_manufacturing</span><h3>Vérification du perçage et de la finition</h3><p>Inspecter les risques spécifiques au processus et la qualité de finition.</p></article>
+          <article class="evidence" data-evidence="Color and Visual Range Reference" data-copy="Approved sample photography, lighting condition, acceptable color range, transparency, zoning and inclusion notes."><span class="material-symbols-outlined">palette</span><h3>Référence de portée visuelle</h3><p>Définir la variation naturelle acceptable avant la production.</p></article>
+          <article class="evidence" data-evidence="Protective Packaging Method" data-copy="Individual protection, divided trays, anti-scratch layers, count per inner pack, outer-carton labeling and drop-risk controls."><span class="material-symbols-outlined">package_2</span><h3>Emballage de protection</h3><p>Découvrez comment les surfaces, les bords et les perçages sont protégés.</p></article>
+          <article class="evidence" data-evidence="Export Document Example" data-copy="Packing list, commercial invoice, material description, quantity, weight and shipment reference with client-sensitive data removed."><span class="material-symbols-outlined">flight_takeoff</span><h3>Exporter des documents</h3><p>Prévisualisez les fichiers utilisés pour la coordination des expéditions.</p></article>
+          <article class="evidence" data-evidence="Workshop and Equipment Photography" data-copy="Project-relevant cutting, drilling, polishing and inspection equipment photography—not generic stock factory imagery."><span class="material-symbols-outlined">photo_camera</span><h3>Preuve de l'atelier</h3><p>Affichez le processus et le contexte d'inspection pertinents.</p></article>
+        </div>
+        <div class="document-grid">
+          <article class="document">
+            <div class="doc-head"><h3>Divulgation importante · Exemple</h3><span class="demo-label">Données de démonstration</span></div>
+            <table><tbody><tr><td>Variété de cristal</td><td>Quartz fumé</td></tr><tr><td>Statut matériel</td><td>Naturel</td></tr><tr><td>Traitement thermique</td><td>A déclarer par lot</td></tr><tr><td>Teinture / remplissage / enduction</td><td>A déclarer par lot</td></tr><tr><td>Référence du lot</td><td>EOG-DEMO-001</td></tr><tr><td>Date de divulgation</td><td>YYYY-MM-DD</td></tr></tbody></table>
+          </article>
+          <article class="document">
+            <div class="doc-head"><h3>Enregistrement de lot · Exemple</h3><span class="demo-label">Données de démonstration</span></div>
+            <table><tbody><tr><td>Lot de matière première</td><td>RM-DEMO-01</td></tr><tr><td>Exemple de version d'approbation</td><td>V3 · En attente d'approbation de l'acheteur</td></tr><tr><td>Quantité produite</td><td>A confirmer</td></tr><tr><td>Date de contrôle</td><td>YYYY-MM-DD</td></tr><tr><td>Quantité d'emballage</td><td>A confirmer</td></tr><tr><td>Date d'expédition</td><td>A confirmer</td></tr></tbody></table>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section inquiry" id="inquiry">
+      <div class="wrap inquiry-grid">
+        <div>
+          <span class="eyebrow">Démarrer une révision de conception</span>
+          <h2 style="margin:18px 0">Envoyez ce que vous avez. Nous organiserons les questions techniques.</h2>
+          <p class="lead">Un croquis, une capture d'écran, une image de référence, un exemple de photo ou un fichier CAO suffisent pour commencer. Seuls votre nom et votre email professionnel sont requis.</p>
+          <div class="contact-list">
+            <div class="contact-line"><span class="material-symbols-outlined">mail</span>577300811@qq.com</div>
+            <div class="contact-line"><span class="material-symbols-outlined">call</span>WhatsApp : +86 152 5247 4087</div>
+            <div class="contact-line"><span class="material-symbols-outlined">schedule</span>Réponse préliminaire de faisabilité : généralement sous 48 heures</div>
+          </div>
+        </div>
+        <form id="home-design-review-form" enctype="multipart/form-data">
+          <input type="hidden" id="interest" name="interest" value="">
+          <div class="fields">
+            <div><label for="name">Nom *</label><input id="name" name="name" required="" autocomplete="name" placeholder="Votre nom"></div>
+            <div><label for="email">E-mail professionnel *</label><input id="email" name="email" type="email" required="" autocomplete="email" placeholder="name@company.com"></div>
+            <div><label for="company">Entreprise / marque</label><input id="company" name="company" autocomplete="organization" placeholder="Facultatif"></div>
+            <div><label for="region">Pays/région</label><input id="region" name="region" autocomplete="country-name" placeholder="Facultatif"></div>
+            <div><label for="quantity">Quantité attendue</label><input id="quantity" name="quantity" placeholder="Facultatif"></div>
+            <div><label for="type">Type de demande</label><select id="type" name="type"><option>Revue de conception</option><option>Exemple de demande</option><option>Demande de devis</option><option>Approvisionnement en matériaux</option></select></div>
+            <div class="full"><label for="message">Exigence</label><textarea id="message" name="message" placeholder="Matériau, taille, forme, perçage, finition, marché cible ou toute préoccupation que vous connaissez déjà."></textarea></div>
+            <div class="full"><label for="file">Dossiers techniques</label><label class="drop" for="file"><span class="material-symbols-outlined">upload_file</span><strong id="fileLabel">Déposez ou choisissez des dessins, des images ou des fichiers CAO</strong><small>JPG, PNG, PDF, DWG, DXF, STP, STEP ou ZIP · facultatif</small><input id="file" name="attachment" type="file" multiple="" accept=".jpg,.jpeg,.png,.pdf,.dwg,.dxf,.stp,.step,.zip"></label></div>
+          </div>
+          <div class="form-foot">
+            <p class="privacy">En soumettant votre demande, vous acceptez que nous puissions utiliser ces informations pour examiner et répondre à votre demande B2B. Seuls votre nom et votre email sont requis.</p>
+            <button class="btn primary" type="submit">Soumettre pour examen <span class="material-symbols-outlined">arrow_forward</span></button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div><a class="brand" href="/fr/">East Origin Gems</a><p>Approvisionnement, développement personnalisé, gestion de la qualité et coordination des exportations de composants en cristal naturel basés à Donghai.</p><p class="mono" style="margin-top:24px">© <span id="year"></span> East Origin Gems</p></div>
+      <div><h4>Explorer</h4><a href="/fr/solutions/">Solutions</a><a href="/fr/products/">Composants</a><a href="/fr/custom-development/">Développement</a><a href="/fr/quality/">Qualité</a></div>
+      <div><h4>Commencer</h4><a href="/fr/design-review/">Télécharger un design</a><a href="/fr/samples/">Demander des échantillons</a><a href="/fr/design-review/">Demander un devis</a><a href="/fr/design-review/">Demandez à un spécialiste</a></div>
+      <div><h4>Contacter</h4><a href="mailto:577300811@qq.com">577300811@qq.com</a><a href="https://wa.me/8615252474087" target="_blank" rel="noopener">WhatsApp +86 152 5247 4087</a><p>Donghai, Jiangsu, Chine</p></div>
+    </div>
+  </footer>
+
+  <div class="modal" id="evidenceModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-head"><div><span class="demo-label">Catégorie de preuve</span><h2 id="modalTitle" style="font-size:32px;margin-top:10px"></h2></div><button class="icon-btn" id="closeModal" aria-label="Fermer"><span class="material-symbols-outlined">close</span></button></div>
+      <p class="lead" id="modalCopy"></p>
+      <div class="modal-list" style="margin-top:24px"><div><small>Disponibilité des preuves</small>Des enregistrements spécifiques au projet sont préparés lors de l'approvisionnement et de la production</div><div><small>Règle de documentation</small>Seuls les dossiers de projet vérifiés et les résultats d'inspection sont publiés</div></div>
+      <div style="margin-top:24px"><a class="btn primary" href="/fr/design-review/" id="modalCta">Posez des questions sur ces preuves</a></div>
+    </div>
+  </div>
+
+  <div id="toast" style="position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:#1f1824;color:#fff;padding:12px 18px;z-index:100;opacity:0;pointer-events:none;transition:.2s;font-size:14px"></div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    document.getElementById('menuButton').addEventListener('click', () => nav.classList.toggle('open'));
+    document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+    const toast = document.getElementById('toast');
+    function showToast(message){
+      toast.textContent = message;
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%,0)';
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%,20px)';
+      }, 2600);
+    }
+    document.querySelectorAll('[data-toast]').forEach(el => el.addEventListener('click', () => showToast(el.dataset.toast)));
+
+    const modal = document.getElementById('evidenceModal');
+    document.querySelectorAll('.evidence').forEach(card => card.addEventListener('click', () => {
+      document.getElementById('modalTitle').textContent = card.dataset.evidence;
+      document.getElementById('modalCopy').textContent = card.dataset.copy;
+      modal.classList.add('open');
+      document.getElementById('closeModal').focus();
+    }));
+    function closeModal(){ modal.classList.remove('open'); }
+    document.getElementById('closeModal').addEventListener('click', closeModal);
+    document.getElementById('modalCta').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+
+    document.querySelectorAll('.select-product').forEach(button => button.addEventListener('click', () => {
+      const product = button.dataset.product;
+      document.getElementById('interest').value = product;
+      document.getElementById('message').value = `I am interested in: ${product}. `;
+      document.getElementById('type').value = button.textContent.includes('Sample') ? 'Sample request' : 'Quote request';
+      document.getElementById('inquiry').scrollIntoView({behavior:'smooth'});
+      setTimeout(() => document.getElementById('name').focus(), 500);
+    }));
+
+    document.getElementById('file').addEventListener('change', e => {
+      const files = Array.from(e.target.files);
+      document.getElementById('fileLabel').textContent = files.length ? `${files.length} file${files.length > 1 ? 's' : ''} selected: ${files.map(f => f.name).join(', ')}` : 'Drop or choose drawings, images or CAD files';
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="/site-nav.js"></script>
+  <script src="/contact.js"></script>
+<script src="/i18n.js"></script>
+
+
+</body></html>

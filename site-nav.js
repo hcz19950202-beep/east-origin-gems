@@ -1,6 +1,41 @@
 (() => {
   const whatsappNumber = "8615252474087";
   const whatsappUrl = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text || "Hello, I would like to discuss a B2B crystal sourcing inquiry.")}`;
+  const supportedLanguages = ["fr", "de", "es", "pt", "ar", "ru"];
+  const currentLanguage = window.location.pathname.split("/").filter(Boolean)[0];
+  const languagePrefix = supportedLanguages.includes(currentLanguage) ? `/${currentLanguage}` : "";
+  const siteLanguage = supportedLanguages.includes(currentLanguage) ? currentLanguage : "en";
+  const localizedRoute = (route) => `${languagePrefix}${route}`;
+  const whatsappCopy = {
+    en: {
+      aria: "Chat with East Origin Gems on WhatsApp",
+      message: "Hello East Origin Gems, I would like to discuss a B2B crystal sourcing inquiry."
+    },
+    fr: {
+      aria: "Discuter avec East Origin Gems sur WhatsApp",
+      message: "Bonjour East Origin Gems, je souhaite discuter d'une demande d'approvisionnement B2B en cristal."
+    },
+    de: {
+      aria: "East Origin Gems über WhatsApp kontaktieren",
+      message: "Hallo East Origin Gems, ich möchte eine B2B-Anfrage zur Beschaffung von Kristallkomponenten besprechen."
+    },
+    es: {
+      aria: "Contactar con East Origin Gems por WhatsApp",
+      message: "Hola East Origin Gems, me gustaría hablar sobre una consulta B2B de abastecimiento de componentes de cristal."
+    },
+    pt: {
+      aria: "Falar com a East Origin Gems pelo WhatsApp",
+      message: "Olá East Origin Gems, gostaria de conversar sobre uma consulta B2B de fornecimento de componentes de cristal."
+    },
+    ar: {
+      aria: "تواصل مع East Origin Gems عبر واتساب",
+      message: "مرحباً East Origin Gems، أود مناقشة طلب توريد مكونات كريستال للأعمال."
+    },
+    ru: {
+      aria: "Связаться с East Origin Gems через WhatsApp",
+      message: "Здравствуйте, East Origin Gems. Я хотел(а) бы обсудить B2B-запрос на поставку компонентов из кристалла."
+    }
+  };
   const routes = [
     [/\bhome\b/i, "/"],
     [/solutions?|material sourcing|logistics/i, "/solutions/"],
@@ -18,6 +53,7 @@
 
   const addWhatsAppButton = () => {
     if (document.getElementById("eog-whatsapp-float")) return;
+    const copy = whatsappCopy[siteLanguage] || whatsappCopy.en;
 
     const style = document.createElement("style");
     style.textContent = `
@@ -72,10 +108,10 @@
 
     const link = document.createElement("a");
     link.id = "eog-whatsapp-float";
-    link.href = whatsappUrl(`Hello East Origin Gems, I would like to discuss a B2B crystal sourcing inquiry. Page: ${window.location.href}`);
+    link.href = whatsappUrl(`${copy.message} Page: ${window.location.href}`);
     link.target = "_blank";
     link.rel = "noopener noreferrer";
-    link.setAttribute("aria-label", "Chat with East Origin Gems on WhatsApp");
+    link.setAttribute("aria-label", copy.aria);
     link.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">chat</span><span class="eog-whatsapp-label">WhatsApp</span>';
     document.body.append(link);
   };
@@ -87,13 +123,13 @@
       if ((element.textContent || "").replace(/\s+/g, " ").trim() !== "DONGHAI CRYSTAL") return;
       if (element.querySelector("a, div, span")) return;
       if (element.tagName === "A") {
-        element.setAttribute("href", "/");
+        element.setAttribute("href", localizedRoute("/"));
         return;
       }
       element.setAttribute("role", "link");
       element.setAttribute("tabindex", "0");
       element.classList.add("cursor-pointer");
-      const goHome = () => { window.location.href = "/"; };
+      const goHome = () => { window.location.href = localizedRoute("/"); };
       element.addEventListener("click", goHome);
       element.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
@@ -106,7 +142,8 @@
     document.querySelectorAll("a[href='#'], button").forEach((element) => {
       const label = (element.textContent || "").replace(/\s+/g, " ").trim();
       if (/whatsapp/i.test(label)) {
-        const destination = whatsappUrl(`Hello Donghai Crystal, I would like to discuss a B2B sourcing inquiry. Page: ${window.location.href}`);
+        const copy = whatsappCopy[siteLanguage] || whatsappCopy.en;
+        const destination = whatsappUrl(`${copy.message} Page: ${window.location.href}`);
         if (element.tagName === "A") {
           element.setAttribute("href", destination);
           element.setAttribute("target", "_blank");
@@ -116,7 +153,8 @@
         }
         return;
       }
-      const destination = routeFor(label);
+      const route = routeFor(label);
+      const destination = route ? localizedRoute(route) : "";
       if (!destination) return;
       if (element.tagName === "A") element.setAttribute("href", destination);
       else element.addEventListener("click", () => { window.location.href = destination; });

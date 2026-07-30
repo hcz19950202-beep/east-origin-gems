@@ -24,7 +24,7 @@
         ::-webkit-scrollbar-track { background: #f3f3f6; }
         ::-webkit-scrollbar-thumb { background: #ccc4cc; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: #7c757c; }
-        
+
         .step-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
 <script id="tailwind-config">
@@ -125,6 +125,16 @@
           },
         }
       </script>
+<!-- EOG_I18N_ALTERNATES_START -->
+<link rel="alternate" hreflang="en" href="https://east-origin-gems.pages.dev/design-review/"/>
+<link rel="alternate" hreflang="fr" href="https://east-origin-gems.pages.dev/fr/design-review/"/>
+<link rel="alternate" hreflang="de" href="https://east-origin-gems.pages.dev/de/design-review/"/>
+<link rel="alternate" hreflang="es" href="https://east-origin-gems.pages.dev/es/design-review/"/>
+<link rel="alternate" hreflang="pt" href="https://east-origin-gems.pages.dev/pt/design-review/"/>
+<link rel="alternate" hreflang="ar" href="https://east-origin-gems.pages.dev/ar/design-review/"/>
+<link rel="alternate" hreflang="ru" href="https://east-origin-gems.pages.dev/ru/design-review/"/>
+<link rel="alternate" hreflang="x-default" href="https://east-origin-gems.pages.dev/design-review/"/>
+<!-- EOG_I18N_ALTERNATES_END -->
 </head>
 <body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed-dim selection:text-on-primary-fixed min-h-screen flex flex-col">
 <!-- Top Navigation (Shell Implementation) -->
@@ -311,7 +321,7 @@
         const fileInput = document.getElementById('technical-file-upload');
         const fileStatus = document.getElementById('file-status');
         const maxUploadSize = 10 * 1024 * 1024;
-        
+
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             dropZone.addEventListener(eventName, preventDefaults, false);
         });
@@ -367,5 +377,6 @@
             });
         });
     </script>
-<script src="/site-nav.js"></script><script src="/contact.js"></script></body></html>
+<script src="/site-nav.js"></script><script src="/contact.js"></script><script src="/i18n.js"></script>
+</body></html>
 

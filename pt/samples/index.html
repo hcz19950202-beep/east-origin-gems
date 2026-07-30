@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="light" lang="pt" dir="ltr"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Solicitar Amostras - Cristal Donghai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#4f453f",
+                        "surface-container": "#eeeef0",
+                        "tertiary": "#282b2d",
+                        "surface-bright": "#f9f9fc",
+                        "on-tertiary": "#ffffff",
+                        "stone-gray": "#94999C",
+                        "surface-dim": "#dadadc",
+                        "on-surface-variant": "#4a454b",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#ccc4cc",
+                        "on-surface": "#1a1c1e",
+                        "secondary-fixed": "#efe0d8",
+                        "amethyst-deep": "#4A3B52",
+                        "warning-amber": "#B37400",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#baa6c1",
+                        "inverse-primary": "#d4bfdc",
+                        "primary": "#33253b",
+                        "secondary-fixed-dim": "#d2c4bc",
+                        "error-container": "#ffdad6",
+                        "secondary": "#675c56",
+                        "tertiary-fixed": "#e1e3e5",
+                        "surface": "#f9f9fc",
+                        "on-secondary-fixed": "#221a16",
+                        "on-secondary-container": "#6b605a",
+                        "inverse-on-surface": "#f0f0f3",
+                        "smoky-quartz": "#6F645E",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "background": "#f9f9fc",
+                        "primary-fixed": "#f1dbf9",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#23162b",
+                        "surface-container-high": "#e8e8ea",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1e",
+                        "tertiary-container": "#3e4143",
+                        "on-tertiary-container": "#aaadaf",
+                        "success-emerald": "#2D5A43",
+                        "primary-container": "#4a3b52",
+                        "basalt-white": "#F8F9FA",
+                        "surface-container-highest": "#e2e2e5",
+                        "outline": "#7c757c",
+                        "on-primary-fixed-variant": "#504158",
+                        "surface-container-low": "#f3f3f6",
+                        "surface-tint": "#695871",
+                        "inverse-surface": "#2f3133",
+                        "secondary-container": "#ecddd5",
+                        "primary-fixed-dim": "#d4bfdc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e2e2e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-data": ["JetBrains Mono"],
+                        "headline-sm": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "technical-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); }
+        /* Focus styles for accessibility */
+        *:focus-visible { outline: 2px solid theme('colors.primary'); outline-offset: 2px; }
+        .glass-panel { background: rgba(248, 249, 250, 0.7); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid theme('colors.outline-variant'); }
+    </style>
+<!-- EOG_I18N_ALTERNATES_START -->
+<link rel="alternate" hreflang="en" href="https://east-origin-gems.pages.dev/samples/">
+<link rel="alternate" hreflang="fr" href="https://east-origin-gems.pages.dev/fr/samples/">
+<link rel="alternate" hreflang="de" href="https://east-origin-gems.pages.dev/de/samples/">
+<link rel="alternate" hreflang="es" href="https://east-origin-gems.pages.dev/es/samples/">
+<link rel="alternate" hreflang="pt" href="https://east-origin-gems.pages.dev/pt/samples/">
+<link rel="alternate" hreflang="ar" href="https://east-origin-gems.pages.dev/ar/samples/">
+<link rel="alternate" hreflang="ru" href="https://east-origin-gems.pages.dev/ru/samples/">
+<link rel="alternate" hreflang="x-default" href="https://east-origin-gems.pages.dev/samples/">
+<!-- EOG_I18N_ALTERNATES_END -->
+<link rel="canonical" href="https://east-origin-gems.pages.dev/pt/samples/"></head>
+<body class="antialiased min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 backdrop-blur-md dark:bg-surface-container/80 docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline flat no shadows">
+<div class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">
+                DONGHAI CRYSTAL
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all" href="#">Soluções</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all" href="#">Produtos</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all" href="#">Desenvolvimento Personalizado</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all opacity-80 scale-95 transition-transform" href="#">Amostras</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all" href="#">Qualidade</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all" href="#">Sobre</a>
+</div>
+<div class="hidden md:flex gap-stack-md items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">EN/FR/DE</span>
+<button class="bg-amethyst-deep text-on-primary px-4 py-2 rounded font-label-caps text-label-caps hover:bg-primary transition-colors">Envie seu projeto</button>
+</div>
+<!-- Mobile Menu Toggle (Visual Only) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-margin-desktop">
+<!-- Header Section -->
+<header class="mb-margin-desktop max-w-3xl">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-stack-md">Aquisição de amostras</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                Avalie a qualidade do material, a precisão do corte e o polimento antes de se comprometer com os volumes de produção. Selecione um kit de amostra abaixo ou solicite um protótipo personalizado de acordo com suas especificações.
+            </p>
+</header>
+<!-- Bento Grid: Sample Options & Policies -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-margin-desktop">
+<!-- Basic Kit -->
+<div class="md:col-span-4 glass-panel p-stack-lg rounded-lg flex flex-col group hover:border-primary transition-colors">
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Kit de materiais básicos</h3>
+<span class="material-symbols-outlined text-outline">category</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Seleção padrão de nossos materiais mais comuns em cortes padrão para avaliar a clareza e a consistência da cor.</p>
+<ul class="space-y-2 mb-stack-lg">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">5 tipos de materiais</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">Padrão Redondo Brilhante</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">Envio em 24h</span></li>
+</ul>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-stack-sm flex justify-between items-center">
+<span class="font-technical-data text-technical-data text-primary">US$ 50,00</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">SKU: BSC-KT-01</span>
+</div>
+</div>
+<!-- Quality Grade Sample -->
+<div class="md:col-span-4 glass-panel p-stack-lg rounded-lg flex flex-col group hover:border-primary transition-colors">
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-primary">Série de qualidade</h3>
+<span class="material-symbols-outlined text-outline">diamond</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Um kit focado que mostra um único material em vários graus de qualidade (A, AA, AAA) para estabelecer referências técnicas.</p>
+<ul class="space-y-2 mb-stack-lg">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">1 material (selecionável)</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">Notas: A a AAA</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-success-emerald text-sm">check</span> <span class="font-technical-data text-technical-data text-on-surface">Envio em 48h</span></li>
+</ul>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-stack-sm flex justify-between items-center">
+<span class="font-technical-data text-technical-data text-primary">US$ 120,00</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-2 py-1 rounded">SKU: QLG-SR-02</span>
+</div>
+</div>
+<!-- Custom Prototype -->
+<div class="md:col-span-4 bg-primary-container text-on-primary-container p-stack-lg rounded-lg flex flex-col relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined" style="font-size: 120px;">architecture</span>
+</div>
+<div class="flex-grow relative z-10">
+<div class="flex justify-between items-start mb-stack-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-primary-container">Protótipo Personalizado</h3>
+</div>
+<p class="font-body-md text-body-md mb-stack-md opacity-90">Fabricado de acordo com as especificações exatas de CAD para verificar geometrias complexas antes da ferramenta.</p>
+<ul class="space-y-2 mb-stack-lg opacity-90">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> <span class="font-technical-data text-technical-data">Geometria Personalizada</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> <span class="font-technical-data text-technical-data">Relatório de tolerância incluído</span></li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check</span> <span class="font-technical-data text-technical-data">Prazo de entrega: 7-14 dias</span></li>
+</ul>
+</div>
+<div class="mt-auto border-t border-on-primary-container/20 pt-stack-sm flex justify-between items-center relative z-10">
+<span class="font-technical-data text-technical-data">Cotado por especificação</span>
+<span class="font-label-caps text-label-caps bg-on-primary-container/10 px-2 py-1 rounded">REQ. CAD</span>
+</div>
+</div>
+<!-- Policy Information (Span 8) -->
+<div class="md:col-span-8 glass-panel p-stack-lg rounded-lg flex flex-col justify-center">
+<h4 class="font-headline-sm text-headline-sm text-primary mb-stack-sm">Política de Aquisições e Logística</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg mt-stack-sm">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">local_shipping</span>
+<span class="font-label-caps text-label-caps text-primary">Envio e prazos de entrega</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Os kits padrão são enviados via DHL Express (3 a 5 dias úteis globalmente). Protótipos personalizados exigem revisão de engenharia antes do agendamento da fabricação.</p>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-sm text-primary">currency_exchange</span>
+<span class="font-label-caps text-label-caps text-primary">Política de reembolso</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">As taxas de amostra (excluindo frete) serão totalmente creditadas em seu primeiro pedido de produção superior a US$ 2.500 em 90 dias.</p>
+</div>
+</div>
+</div>
+<!-- Image Accent (Span 4) -->
+<div class="md:col-span-4 rounded-lg overflow-hidden border border-outline-variant relative min-h-[200px]">
+<div class="bg-cover bg-center w-full h-full absolute inset-0" data-alt="Close up macro photography of precision cut translucent crystals arrayed neatly on an industrial metal inspection table. The lighting is crisp, cool, and technical, highlighting the sharp geometric facets and pristine quality of the materials. The mood is highly professional and focused on manufacturing rigor." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYwW4KpHcfavgj60iL5njlBKhbuBCxf29UxufFT2cqblvDCOU2fsy4Vv3yH97O-uqTPu18M8mHTEGnOBm8dbHxxwPmJj3SJGoUEgbVueIW96RbH__ldcuxiTYoe8RysJWsr7K4Aw_dcu6pEG1egQ-0vkewkc6K3x-TPsWMUMvE_lDJefvhSX41Kh-9gst5llVdrv-8Sm5PzriBFjtiRRf2K4XPjrMn1vBy6uXtigaHsWB-kJ5sZ62MLQ')"></div>
+</div>
+</div>
+<!-- Request Form -->
+<section class="max-w-3xl border-t border-outline-variant pt-margin-tablet">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-lg">Formulário de solicitação de amostra</h2>
+<form class="space-y-stack-lg" data-inquiry="sample">
+<!-- Kit Selection -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm">Selecione o tipo de amostra</label>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-sm">
+<label class="flex items-center p-stack-sm border border-outline-variant rounded cursor-pointer hover:bg-surface-container-low transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-container">
+<input checked="" class="form-radio text-primary focus:ring-primary border-outline-variant" name="sample_type" type="radio" value="basic">
+<span class="ml-2 font-technical-data text-technical-data text-on-surface">Kit Básico</span>
+</label>
+<label class="flex items-center p-stack-sm border border-outline-variant rounded cursor-pointer hover:bg-surface-container-low transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-container">
+<input class="form-radio text-primary focus:ring-primary border-outline-variant" name="sample_type" type="radio" value="quality">
+<span class="ml-2 font-technical-data text-technical-data text-on-surface">Série de qualidade</span>
+</label>
+<label class="flex items-center p-stack-sm border border-outline-variant rounded cursor-pointer hover:bg-surface-container-low transition-colors has-[:checked]:border-primary has-[:checked]:bg-surface-container">
+<input class="form-radio text-primary focus:ring-primary border-outline-variant" name="sample_type" type="radio" value="custom">
+<span class="ml-2 font-technical-data text-technical-data text-on-surface">Protótipo Personalizado</span>
+</label>
+</div>
+</div>
+<!-- Contact Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="contact_name">Nome do contato *</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="contact_name" name="contact_name" placeholder="Seu nome" required="" type="text">
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="contact_email">E-mail Profissional *</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="contact_email" name="email" placeholder="buyer@acme.com" required="" type="email">
+</div>
+</div>
+<!-- Specifications (Conditional vis logic would go here in full app) -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="specifications">Especificações / Notas Técnicas</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="specifications" name="specifications" placeholder="Especifique os tipos de materiais desejados ou anexe links de referência..." rows="4"></textarea>
+</div>
+<!-- Submit -->
+<div class="flex justify-end pt-stack-sm">
+<button class="bg-amethyst-deep text-on-primary px-8 py-3 rounded font-label-caps text-label-caps hover:bg-primary transition-colors flex items-center gap-2" type="submit">
+                        Enviar solicitação
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container full-width bottom-0 border-t border-outline-variant dark:border-outline flat no shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-4 flex flex-col md:flex-row justify-between items-center gap-stack-md mb-stack-md">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">
+                    DONGHAI CRYSTAL
+                </div>
+<div class="flex gap-stack-md flex-wrap justify-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">Divulgações Relevantes</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">Política de Privacidade</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">Termos de Serviço</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">Conformidade</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">WhatsApp</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2" href="#">E-mail</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 border-t border-outline-variant pt-stack-md text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">2024 Cristal Donghai. Fornecimento de precisão profissional.</p>
+</div>
+</div>
+</footer>
+<script src="/site-nav.js"></script><script src="/contact.js"></script><script src="/i18n.js"></script>
+
+</body></html>
