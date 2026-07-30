@@ -1,0 +1,340 @@
+﻿<!DOCTYPE html>
+
+<html class="light" lang="fr" data-language="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | Donghai Crystal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Source+Serif+4:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#4f453f",
+                        "surface-container": "#eeeef0",
+                        "tertiary": "#282b2d",
+                        "surface-bright": "#f9f9fc",
+                        "on-tertiary": "#ffffff",
+                        "stone-gray": "#94999C",
+                        "surface-dim": "#dadadc",
+                        "on-surface-variant": "#4a454b",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#ccc4cc",
+                        "on-surface": "#1a1c1e",
+                        "secondary-fixed": "#efe0d8",
+                        "amethyst-deep": "#4A3B52",
+                        "warning-amber": "#B37400",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#baa6c1",
+                        "inverse-primary": "#d4bfdc",
+                        "primary": "#33253b",
+                        "secondary-fixed-dim": "#d2c4bc",
+                        "error-container": "#ffdad6",
+                        "secondary": "#675c56",
+                        "tertiary-fixed": "#e1e3e5",
+                        "surface": "#f9f9fc",
+                        "on-secondary-fixed": "#221a16",
+                        "on-secondary-container": "#6b605a",
+                        "inverse-on-surface": "#f0f0f3",
+                        "smoky-quartz": "#6F645E",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "background": "#f9f9fc",
+                        "primary-fixed": "#f1dbf9",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#23162b",
+                        "surface-container-high": "#e8e8ea",
+                        "on-tertiary-fixed": "#191c1e",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1a1c1e",
+                        "tertiary-container": "#3e4143",
+                        "on-tertiary-container": "#aaadaf",
+                        "success-emerald": "#2D5A43",
+                        "primary-container": "#4a3b52",
+                        "basalt-white": "#F8F9FA",
+                        "surface-container-highest": "#e2e2e5",
+                        "outline": "#7c757c",
+                        "on-primary-fixed-variant": "#504158",
+                        "surface-container-low": "#f3f3f6",
+                        "surface-tint": "#695871",
+                        "inverse-surface": "#2f3133",
+                        "secondary-container": "#ecddd5",
+                        "primary-fixed-dim": "#d4bfdc",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e2e2e5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "margin-mobile": "20px",
+                        "stack-md": "16px",
+                        "margin-tablet": "32px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg-mobile": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["\"Source Serif 4\""],
+                        "body-lg": ["Hanken Grotesk"],
+                        "technical-data": ["JetBrains Mono"],
+                        "headline-sm": ["\"Source Serif 4\""]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["30px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-md": ["28px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "technical-data": ["13px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="hidden md:flex flex-col bg-surface/80 backdrop-blur-md sticky top-0 z-50 w-full border-b border-outline-variant">
+<div class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight uppercase">
+                DONGHAI CRYSTAL
+            </div>
+<ul class="flex space-x-gutter items-center font-label-caps text-label-caps">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Solutions</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Products</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Custom Development</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Samples</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Quality</a></li>
+<li><a class="text-primary font-bold border-b-2 border-primary pb-1 active" href="#">About</a></li>
+</ul>
+<div class="flex items-center space-x-stack-md">
+<button class="font-label-caps text-label-caps bg-amethyst-deep text-on-primary px-4 py-2 rounded focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary hover:opacity-90 transition-opacity">
+                    Upload Your Design
+                </button>
+<div class="font-label-caps text-label-caps text-on-surface-variant cursor-pointer hover:text-primary">
+                    EN/FR/DE
+                </div>
+</div>
+</div>
+</nav>
+<!-- Mobile Header -->
+<div class="md:hidden flex justify-between items-center px-margin-mobile py-stack-md bg-surface sticky top-0 z-50 border-b border-outline-variant">
+<div class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight uppercase">
+            DONGHAI CRYSTAL
+        </div>
+<button aria-label="Menu" class="text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+<!-- Main Content -->
+<main class="w-full">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-[96px] grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="col-span-1 md:col-span-5 space-y-stack-md">
+<div class="font-label-caps text-label-caps text-stone-gray mb-2">THE SOURCING HUB</div>
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-balance">
+                    Precision Sourcing in the Crystal Capital
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg pt-4">
+                    We are a specialized sourcing office and coordination hub located directly in Donghai, China. We don't operate a single monolithic factory; instead, we leverage a curated network of specialized workshops to deliver precision components for high-end jewelry manufacturing.
+                </p>
+<div class="pt-stack-md flex gap-stack-md">
+<button class="font-label-caps text-label-caps bg-amethyst-deep text-on-primary px-6 py-3 rounded focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-primary hover:opacity-90 transition-opacity">
+                        View Sourcing Process
+                    </button>
+</div>
+</div>
+<div class="col-span-1 md:col-span-7 mt-stack-lg md:mt-0 relative h-[400px] md:h-[600px] w-full rounded-lg overflow-hidden border border-outline-variant">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A highly detailed, professional photograph of a pristine, brightly lit technical workshop environment in Donghai. Close up on digital calipers measuring a perfectly cut geometric gemstone against a clean, white drafting table. High contrast, technical aesthetic, muted neutral colors with crisp silver metal details, emphasizing industrial precision over luxury fluff." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8qcSI71Btnrul5CFJyXbZmdecN9n6ipzdjx26zDtHvTzktB5dAoeFawANRba5vEP9T7SIm5UMPbc2YSmW0D9o48CgSSIaWfJz0q39gec-ns2t0eFMHvkgBKvwDv-4lQh5kwFv217DrkE6y1EeUmnUwfrTsLmM7khCTm0Kt1THp2kYg0Rj4xCYPdsMB5OgrLulhTVbeNv6m4r9Rp8mfb-OxUPiQIjCrYM4pXDsFtc_3GvLct06z0BJYQ"/>
+<div class="absolute bottom-4 left-4 right-4 bg-surface/90 backdrop-blur border border-outline-variant p-4 rounded flex justify-between items-center">
+<div>
+<div class="font-label-caps text-label-caps text-stone-gray">LOCATION</div>
+<div class="font-technical-data text-technical-data text-on-surface">Donghai County, Jiangsu, CN</div>
+</div>
+<span class="material-symbols-outlined text-stone-gray">location_on</span>
+</div>
+</div>
+</section>
+<!-- Workshop Network (Bento Grid) -->
+<section class="bg-surface-container-low py-stack-lg md:py-[96px]">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="mb-stack-lg max-w-2xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-stack-sm">The Workshop Network</h2>
+<p class="text-on-surface-variant">Our strength lies in coordination. We maintain rigorous technical standards across a network of specialized independent workshops, ensuring scale, flexibility, and exacting quality control.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-stack-md auto-rows-[250px]">
+<!-- Network Node 1 -->
+<div class="md:col-span-8 bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-between relative overflow-hidden group">
+<div class="z-10 w-full md:w-1/2">
+<span class="material-symbols-outlined text-primary mb-4 text-[32px]">precision_manufacturing</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Specialized Capabilities</h3>
+<p class="text-on-surface-variant text-sm">Rather than relying on a generalized workforce, we route specific gem cuts and technical specifications to workshops with proven expertise in those exact geometries.</p>
+</div>
+<div class="absolute inset-y-0 right-0 w-1/2 hidden md:block">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity group-hover:mix-blend-normal transition-all duration-500" data-alt="A macro shot of a complex geometric cutting machine operating on a raw quartz crystal. The image is brightly lit, focusing on the sharp metallic edges of the machinery and the exact angles of the stone. Clean, technical, industrial aesthetic with cool gray tones and a shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZUSrjrUNFjZwM5cz7asg0RVNR0bIetWIpV08m4mCteCMK1YenoTj70WhzBWepZQznBeDdUIGnsncJsBphrSO1FYKOsfhJkMSsu7kkoMkBI0VUH9lcwBWQebO74DhYiEGm_6suxsVL1XnTboOMosWXw-_zeWa9zl65oOTSCvpMiecCYhPoR1CkCAfsJvBndUzGwfOciTe7_izIIz9Ord-gUgnbvU5On0pSQ_nYTm1zqlJMFBaSz9YMLA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface to-transparent"></div>
+</div>
+</div>
+<!-- Data Point -->
+<div class="md:col-span-4 bg-amethyst-deep text-on-primary rounded-lg p-stack-md flex flex-col justify-center items-center text-center">
+<div class="font-headline-lg text-headline-lg mb-2">40+</div>
+<div class="font-label-caps text-label-caps opacity-80">Vetted Partner Workshops</div>
+<div class="mt-4 font-technical-data text-technical-data opacity-60 text-xs">ISO 9001:2015 Compliant Network</div>
+</div>
+<!-- Process Control -->
+<div class="md:col-span-4 bg-surface border border-outline-variant rounded-lg p-stack-md flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-stone-gray mb-4">account_tree</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Centralized QC</h3>
+<p class="text-on-surface-variant text-sm">All components flow through our central Donghai office for rigorous tolerance checks using laser metrology before export.</p>
+</div>
+<div class="pt-4 border-t border-outline-variant mt-4">
+<div class="flex justify-between items-center font-technical-data text-technical-data text-xs text-stone-gray">
+<span>Defect Rate</span>
+<span class="text-success-emerald">&lt; 0.5%</span>
+</div>
+</div>
+</div>
+<!-- Heritage -->
+<div class="md:col-span-8 bg-surface border border-outline-variant rounded-lg p-stack-md flex items-center relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-20 grayscale" data-alt="A sweeping, clean, high-angle shot of Donghai county's industrial district during the day. Orderly streets, modern logistics facilities, and clear skies. The aesthetic is modern industrial logistics, bright, clean, emphasizing infrastructure and scale rather than romantic landscapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqoAtjiAO4iA2Nt-lKul4iPwyYk5fMCAgTZ1q-eLA1bbypYWzHRIB31p7Xl_VeC8rqXA16t7onGKyzXSqWovY4oRyGpNgRiYO7ZFmiUh9phSx86A2Kn9clPf7yP8yMlqHGnJQYhE66pOya_ghvPILoL3988iVwcFzQmyROg-0MFIDzJmaii9tFz32x6CtHT4lE5hMYhUJ77Wg-En6ajELefF0wir0StQQox6Q1O_6QNQxpfIpvfS2iEQ"/>
+</div>
+<div class="z-10 relative">
+<div class="font-label-caps text-label-caps text-primary mb-2">REGIONAL ADVANTAGE</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">The Crystal Capital</h3>
+<p class="text-on-surface-variant max-w-lg">By being situated at the global source of raw quartz and gem processing, we secure priority access to rough materials and bypass multiple layers of intermediaries, ensuring transparent pricing and supply chain continuity.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sourcing Process (Step-by-step Technical) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-[96px]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-stack-lg">
+<div class="md:col-span-1">
+<h2 class="font-headline-md text-headline-md text-primary">Our Sourcing Process</h2>
+<p class="text-on-surface-variant mt-2 text-sm">A systematic, data-driven approach to production coordination.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
+<!-- Connecting Line (Desktop) -->
+<div class="hidden md:block absolute top-[24px] left-[12%] right-[12%] h-[1px] bg-outline-variant z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 bg-background pt-2">
+<div class="w-12 h-12 rounded-full border-2 border-primary bg-surface flex items-center justify-center font-technical-data text-technical-data font-bold text-primary mb-4 mx-auto md:mx-0">
+                        01
+                    </div>
+<h3 class="font-headline-sm text-headline-sm text-center md:text-left text-on-surface mb-2">Specification Intake</h3>
+<p class="text-sm text-on-surface-variant text-center md:text-left">We ingest your technical drawings (CAD/PDF) and define exact tolerances, material requirements, and optical parameters.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 bg-background pt-2">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-surface flex items-center justify-center font-technical-data text-technical-data text-stone-gray mb-4 mx-auto md:mx-0">
+                        02
+                    </div>
+<h3 class="font-headline-sm text-headline-sm text-center md:text-left text-on-surface mb-2">Workshop Allocation</h3>
+<p class="text-sm text-on-surface-variant text-center md:text-left">The project is parsed and assigned to the specific workshop within our network optimized for your required cut and material.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 bg-background pt-2">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-surface flex items-center justify-center font-technical-data text-technical-data text-stone-gray mb-4 mx-auto md:mx-0">
+                        03
+                    </div>
+<h3 class="font-headline-sm text-headline-sm text-center md:text-left text-on-surface mb-2">Production Oversight</h3>
+<p class="text-sm text-on-surface-variant text-center md:text-left">Our local agents conduct mid-cycle inspections at the workshops to ensure dimensional accuracy before the run is complete.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 bg-background pt-2">
+<div class="w-12 h-12 rounded-full border border-outline-variant bg-surface flex items-center justify-center font-technical-data text-technical-data text-stone-gray mb-4 mx-auto md:mx-0">
+                        04
+                    </div>
+<h3 class="font-headline-sm text-headline-sm text-center md:text-left text-on-surface mb-2">Final Metrology</h3>
+<p class="text-sm text-on-surface-variant text-center md:text-left">Completed batches return to our central office for final QC using digital calipers and optical comparators before export.</p>
+</div>
+</div>
+</section>
+<!-- Supply Chain Integrity -->
+<section class="border-t border-outline-variant bg-basalt-white">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg md:py-[96px] grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+<div class="order-2 md:order-1 h-[300px] md:h-[500px] w-full rounded-lg overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="A close up, high resolution shot of a digital tablet displaying technical data and bar charts, resting on top of shipping manifests next to a raw crystal specimen. Bright, clean lighting, shallow depth of field, emphasizing data transparency and professional logistics operations in a modern office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZqsE-g4MCgDhPRLvbn7rKd1Ehklf3tloSeskd9XzF2Csn9MC5z0JrpjyRc_RQM6gkKvMrZRnOmKTn921LCqUiiaeA20y8IXCq7P94t3b03VJ9aLBs4P2T7zC-sfC-AeaGGtnQVvPSCpX48kRv8XizlSQ7dVgIpvlC5SEkUozTfquNDEptKhqPMFBz2LuDtRAIm5GZBN3mhXJWfLrgPb9Qwl-9b3L6wiUMrKCxX636JGoTZ1zDHPDQUQ"/>
+</div>
+<div class="order-1 md:order-2 space-y-stack-md md:pl-margin-tablet">
+<span class="material-symbols-outlined text-[40px] text-primary">fact_check</span>
+<h2 class="font-headline-md text-headline-md text-primary">Supply Chain Integrity</h2>
+<p class="text-on-surface-variant">
+                        As a professional sourcing office, we prioritize transparency. We provide full material disclosures and maintain chain-of-custody documentation for all raw materials sourced locally in Donghai.
+                    </p>
+<ul class="space-y-4 pt-4 border-t border-outline-variant">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-sm mt-1 mr-3 text-stone-gray">check_circle</span>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface">Material Disclosures</div>
+<div class="text-sm text-on-surface-variant">Clear distinction between natural, treated, and synthetic inputs.</div>
+</div>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-sm mt-1 mr-3 text-stone-gray">check_circle</span>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface">Compliance Documentation</div>
+<div class="text-sm text-on-surface-variant">Export readiness with necessary regulatory certificates.</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest w-full bottom-0 border-t border-outline-variant mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col justify-between">
+<div class="font-headline-sm text-headline-sm text-primary mb-4 uppercase tracking-tight">
+                    DONGHAI CRYSTAL
+                </div>
+<div class="font-body-md text-body-md text-on-surface-variant text-sm mt-auto">
+                    婕?2024 Donghai Crystal. Professional Precision Sourcing.
+                </div>
+</div>
+<div class="col-span-1">
+<div class="font-label-caps text-label-caps text-stone-gray mb-4">LEGAL</div>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded" href="#">Material Disclosures</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded" href="#">Compliance</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<div class="font-label-caps text-label-caps text-stone-gray mb-4">CONTACT</div>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded flex items-center" href="#"><span class="material-symbols-outlined text-[18px] mr-2">chat</span> WhatsApp</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors focus:outline-2 focus:outline-primary focus:outline-offset-2 rounded flex items-center" href="#"><span class="material-symbols-outlined text-[18px] mr-2">mail</span> Email</a></li>
+</ul>
+</div>
+<div class="col-span-1 flex items-start md:justify-end">
+<div class="font-technical-data text-technical-data text-stone-gray bg-surface border border-outline-variant px-3 py-1 rounded inline-block">
+                    HQ: Donghai, Jiangsu
+                </div>
+</div>
+</div>
+</footer>
+<script>(function(){const marker="/language-preview/";const href=location.href;const index=href.indexOf(marker);if(index>=0){const script=document.createElement("script");script.src=href.slice(0,index+marker.length)+"language-preview.js";document.body.appendChild(script);}})();</script></body></html>
