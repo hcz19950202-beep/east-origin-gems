@@ -1,353 +1,451 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Solutions Overview | DONGHAI CRYSTAL</title>
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Technical Sourcing Directory | DONGHAI CRYSTAL</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Hanken+Grotesk:wght@400;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Theme Configuration -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filter-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .filter-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .filter-scrollbar::-webkit-scrollbar-thumb {
+            background: #ccc4cc;
+            border-radius: 2px;
+        }
+    </style>
+<!-- Tailwind Config -->
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                "surface-dim": "#dadadc",
-                "surface-container": "#eeeef0",
-                "secondary-fixed": "#efe0d8",
-                "primary": "#33253b",
-                "on-surface": "#1a1c1e",
-                "on-error": "#ffffff",
-                "surface-container-lowest": "#ffffff",
-                "tertiary-fixed": "#e1e3e5",
-                "primary-container": "#4a3b52",
-                "on-secondary-fixed-variant": "#4f453f",
-                "error-container": "#ffdad6",
-                "surface-container-low": "#f3f3f6",
-                "smoky-quartz": "#6F645E",
-                "on-surface-variant": "#4a454b",
-                "primary-fixed": "#f1dbf9",
-                "surface": "#f9f9fc",
-                "tertiary-fixed-dim": "#c4c7c9",
-                "tertiary": "#282b2d",
-                "surface-tint": "#695871",
-                "on-tertiary": "#ffffff",
-                "on-secondary": "#ffffff",
-                "on-secondary-container": "#6b605a",
-                "success-emerald": "#2D5A43",
-                "on-primary-container": "#baa6c1",
-                "on-primary": "#ffffff",
-                "basalt-white": "#F8F9FA",
-                "background": "#f9f9fc",
-                "amethyst-deep": "#4A3B52",
-                "on-tertiary-fixed": "#191c1e",
-                "error": "#ba1a1a",
-                "on-primary-fixed": "#23162b",
-                "primary-fixed-dim": "#d4bfdc",
-                "inverse-primary": "#d4bfdc",
-                "outline": "#7c757c",
-                "on-primary-fixed-variant": "#504158",
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
                 "secondary-fixed-dim": "#d2c4bc",
-                "secondary": "#675c56",
-                "warning-amber": "#B37400",
-                "stone-gray": "#94999C",
-                "on-secondary-fixed": "#221a16",
-                "on-background": "#1a1c1e",
-                "surface-variant": "#e2e2e5",
-                "inverse-surface": "#2f3133",
-                "inverse-on-surface": "#f0f0f3",
-                "on-tertiary-fixed-variant": "#444749",
-                "on-tertiary-container": "#aaadaf",
-                "surface-container-high": "#e8e8ea",
-                "tertiary-container": "#3e4143",
-                "surface-bright": "#f9f9fc",
+                "primary-fixed-dim": "#d4bfdc",
                 "outline-variant": "#ccc4cc",
+                "on-background": "#1a1c1e",
+                "on-primary-fixed-variant": "#504158",
+                "on-error": "#ffffff",
+                "inverse-on-surface": "#f0f0f3",
+                "inverse-surface": "#2f3133",
+                "warning-amber": "#B37400",
+                "amethyst-deep": "#4A3B52",
+                "tertiary": "#282b2d",
+                "tertiary-container": "#3e4143",
+                "surface-tint": "#695871",
+                "surface-bright": "#f9f9fc",
+                "background": "#f9f9fc",
+                "secondary": "#675c56",
+                "on-surface-variant": "#4a454b",
+                "on-tertiary-container": "#aaadaf",
+                "on-secondary-container": "#6b605a",
+                "tertiary-fixed": "#e1e3e5",
+                "on-secondary": "#ffffff",
+                "success-emerald": "#2D5A43",
+                "primary": "#33253b",
+                "on-primary": "#ffffff",
+                "stone-gray": "#94999C",
+                "surface": "#f9f9fc",
+                "on-tertiary-fixed-variant": "#444749",
+                "surface-container-high": "#e8e8ea",
+                "on-tertiary": "#ffffff",
+                "tertiary-fixed-dim": "#c4c7c9",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-low": "#f3f3f6",
+                "on-tertiary-fixed": "#191c1e",
+                "primary-fixed": "#f1dbf9",
+                "outline": "#7c757c",
+                "on-primary-fixed": "#23162b",
+                "on-surface": "#1a1c1e",
+                "inverse-primary": "#d4bfdc",
+                "secondary-container": "#ecddd5",
+                "on-secondary-fixed-variant": "#4f453f",
+                "surface-dim": "#dadadc",
+                "secondary-fixed": "#efe0d8",
+                "smoky-quartz": "#6F645E",
+                "basalt-white": "#F8F9FA",
+                "on-secondary-fixed": "#221a16",
+                "surface-variant": "#e2e2e5",
+                "error": "#ba1a1a",
                 "on-error-container": "#93000a",
+                "error-container": "#ffdad6",
                 "surface-container-highest": "#e2e2e5",
-                "secondary-container": "#ecddd5"
-            },
-            "borderRadius": {
+                "primary-container": "#4a3b52",
+                "surface-container": "#eeeef0",
+                "on-primary-container": "#baa6c1"
+        },
+        "borderRadius": {
                 "DEFAULT": "0.125rem",
                 "lg": "0.25rem",
                 "xl": "0.5rem",
                 "full": "0.75rem"
-            },
-            "spacing": {
-                "margin-desktop": "64px",
-                "stack-lg": "32px",
+        },
+        "spacing": {
                 "margin-mobile": "20px",
+                "margin-desktop": "64px",
                 "stack-sm": "8px",
-                "margin-tablet": "32px",
+                "gutter": "24px",
                 "container-max": "1440px",
                 "stack-md": "16px",
-                "gutter": "24px"
-            },
-            "fontFamily": {
-                "headline-lg-mobile": ["\"Source Serif 4\""],
-                "headline-lg": ["\"Source Serif 4\""],
-                "label-caps": ["JetBrains Mono"],
-                "headline-sm": ["\"Source Serif 4\""],
-                "body-lg": ["Hanken Grotesk"],
-                "technical-data": ["JetBrains Mono"],
-                "body-md": ["Hanken Grotesk"],
-                "headline-md": ["\"Source Serif 4\""]
-            },
-            "fontSize": {
-                "headline-lg-mobile": ["30px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "technical-data": ["13px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                "headline-md": ["28px", {"lineHeight": "1.3", "fontWeight": "600"}]
-            }
-          },
+                "stack-lg": "32px",
+                "margin-tablet": "32px"
         },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
+        "fontFamily": {
+                "headline-lg": [
+                        "\"Source Serif 4\""
+                ],
+                "body-lg": [
+                        "Hanken Grotesk"
+                ],
+                "technical-data": [
+                        "JetBrains Mono"
+                ],
+                "headline-md": [
+                        "\"Source Serif 4\""
+                ],
+                "headline-lg-mobile": [
+                        "\"Source Serif 4\""
+                ],
+                "label-caps": [
+                        "JetBrains Mono"
+                ],
+                "headline-sm": [
+                        "\"Source Serif 4\""
+                ],
+                "body-md": [
+                        "Hanken Grotesk"
+                ]
+        },
+        "fontSize": {
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "technical-data": [
+                        "13px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "28px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "30px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
         }
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
-        }
-        .solution-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .solution-card:hover {
-            transform: translateY(-4px);
-        }
-    </style>
+},
+    },
+  }
+</script>
 </head>
-<body class="bg-background text-on-surface font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- Top Navigation Bar -->
-<header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 border-b border-outline-variant">
-<nav class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
-<div class="font-headline-md text-headline-md font-bold text-primary tracking-tight">DONGHAI CRYSTAL</div>
-<div class="hidden md:flex items-center space-x-8">
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-caps text-label-caps" href="#">Solutions</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Products</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Custom Development</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Samples</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">Quality</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-label-caps" href="#">About</a>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-md dark:bg-surface-container/90 docked full-width top-0 sticky z-50 border-b border-outline-variant dark:border-outline">
+<div class="flex justify-between items-center px-margin-desktop py-stack-md w-full max-w-container-max mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed tracking-tight">DONGHAI CRYSTAL</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Solutions</a>
+<a class="text-primary dark:text-primary-fixed font-bold border-b-2 border-primary dark:border-primary-fixed pb-1 font-label-caps text-label-caps" href="#">Sourcing Directory</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Custom Development</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Quality</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">About</a>
 </div>
-<div class="flex items-center space-x-4">
-<span class="text-on-surface-variant font-label-caps text-label-caps cursor-pointer">EN/FR/DE</span>
-<button class="bg-amethyst-deep text-on-primary px-6 py-2 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
-                    Upload Your Design
-                </button>
+<div class="flex items-center gap-stack-md">
+<button class="hidden lg:block font-label-caps text-label-caps text-on-surface-variant hover:text-primary px-4 py-2 border border-outline-variant rounded transition-all">EN/FR/DE</button>
+<button class="bg-primary text-on-primary px-6 py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary-container transition-all active:scale-95">Submit Project Brief</button>
+</div>
 </div>
 </nav>
-</header>
-<main class="max-w-container-max mx-auto px-margin-desktop py-20">
-<!-- Hero Section -->
-<section class="mb-24 max-w-3xl">
-<h1 class="font-headline-lg text-headline-lg text-primary mb-6">Technical Solutions for Jewelry Sourcing</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
-                Precision-engineered crystal components optimized for high-end manufacturing. Select your primary customer task to begin technical specification and project onboarding.
-            </p>
-<div class="flex space-x-4">
-<div class="flex items-center space-x-2 border border-outline-variant px-4 py-2 rounded bg-surface-container-low">
-<span class="material-symbols-outlined text-smoky-quartz">verified</span>
-<span class="font-technical-data text-technical-data text-smoky-quartz">ISO 9001 CERTIFIED</span>
+<main class="max-w-container-max mx-auto px-margin-desktop py-stack-lg min-h-screen flex flex-col gap-gutter">
+<!-- Header & B2B Context Banner -->
+<div class="flex flex-col gap-6 max-w-4xl">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h1 class="font-headline-lg text-headline-lg text-primary mb-2">Technical Sourcing Directory</h1>
+<p class="text-body-md text-on-surface-variant max-w-2xl">
+                            Reference specifications for precision crystal components. Use this directory to identify base materials and geometries for your custom manufacturing project.
+                        </p>
 </div>
-<div class="flex items-center space-x-2 border border-outline-variant px-4 py-2 rounded bg-surface-container-low">
-<span class="material-symbols-outlined text-smoky-quartz">precision_manufacturing</span>
-<span class="font-technical-data text-technical-data text-smoky-quartz">0.02MM TOLERANCE</span>
+</div>
+<div class="bg-surface-container-low border border-outline-variant p-4 rounded flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-2xl">engineering</span>
+<p class="text-technical-data text-on-surface-variant"><strong>B2B Sourcing Notice:</strong> This directory showcases our manufacturing capabilities. All specifications can be modified to meet your exact engineering requirements through our technical review process.</p>
+</div>
+</div>
+</div>
+<!-- Core Capabilities Section -->
+<section class="mt-8 mb-16">
+<h2 class="font-headline-md text-headline-md text-primary mb-8 border-b border-outline-variant pb-2">Core Capabilities</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Capability 1 -->
+<div class="flex flex-col gap-4 group">
+<div class="aspect-video w-full overflow-hidden bg-surface-container-low border border-outline-variant">
+<img alt="Technical Translation &amp; CAD Modeling" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXpLISJbQ31VLcHbbN_vRybZDaYCnIJzzsW9Le4jnKueRAxFpbCC6fXUhQKAmhMhfJqNlP8fJpb0XMv_2TXEFj4ARCJT5iPK4N-YcZxC3uB3vL60nx9c4MIWexyPhdA6B6KuwaXlieb-sTh5Zj7-v17Xa_9derIOSZ6mS97JNPrUktbIvMj2bQRu4TSYsR2g3tu1y_SQjiDkmJAyubBIkShE9ey8UgM7n24okLYTndEoU-wQSgS8FTjA">
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Technical Translation &amp; CAD Modeling</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Taking sketches and CAD blueprints to production-ready specifications optimized for mineral substrates.</p>
+<button class="text-primary hover:text-amethyst-deep font-technical-data text-[12px] flex items-center gap-1 transition-colors">
+                    Consult Engineer <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Capability 2 -->
+<div class="flex flex-col gap-4 group">
+<div class="aspect-video w-full overflow-hidden bg-surface-container-low border border-outline-variant">
+<img alt="Advanced Lapidary &amp; CNC Machining" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp7YJTq42IAXwpo1uGIIcRmw77U6ep4oWaHr0RaSpNnQsgVLFiafeB_9AANmyaoOnoA6N-4DyS4YRQf8Y-a7_3As9OuIyrzlxqx0OK3F94GSKxuF36jDXZlV8nE_0KOUO-1qBUv5WuasQ_0hCBX5HzUhUO71V7dI4qr4pkRK3v4pT9_stdmOrtQgRxwuOOYJ7hQQ-2I3EoKJ94mac0zyWW-kMEw4vlD2V6OhVvFAFhtZg1xoEBzid3mQ">
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Advanced Lapidary &amp; CNC Machining</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Polishing, drilling, and shaping Natural Crystal (SiO2) with micron-level precision using multi-axis technology.</p>
+<button class="text-primary hover:text-amethyst-deep font-technical-data text-[12px] flex items-center gap-1 transition-colors">
+                    Consult Engineer <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Capability 3 -->
+<div class="flex flex-col gap-4 group">
+<div class="aspect-video w-full overflow-hidden bg-surface-container-low border border-outline-variant">
+<img alt="Supply Chain Integrity &amp; Raw Material Sourcing" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7QPY3tFILsxXLsJKgrxyil4Q29VONqzzptl5EXpVGW5wKVv0HCUukHHPouNXow0TAm-F5zOREcFK496lqX8OubMcinQcBIqE96ugA2EoOr7svWlM-N3crVNXJ6AFnoPTWzs747OQI8MrdDGvDqSLf7DuMgZ9s6jwG0mXFhQLLihBIar2HFSN_5DeX1jCVemci8KvcZa9uJOhmAtFqlbnTm25GhRsr_5dLlm0kWEdbaJLbVsPTLR11A">
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Supply Chain Integrity &amp; Raw Material Sourcing</h3>
+<p class="text-body-md text-on-surface-variant mb-4">Direct market access and rigorous quality inspection in Donghai to ensure ethical and premium material selection.</p>
+<button class="text-primary hover:text-amethyst-deep font-technical-data text-[12px] flex items-center gap-1 transition-colors">
+                    Consult Engineer <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
 </div>
 </div>
 </section>
-<!-- Solutions Grid (Bento Style) -->
-<div class="bento-grid">
-<!-- 1. Signature Pendants -->
-<div class="col-span-12 md:col-span-7 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
-<div class="p-8 flex-grow">
-<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 01</span>
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Signature Pendants</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8 max-w-md">
-                        Develop high-visibility centerpieces with complex geometry. We provide precision drilling and custom faceting for large-format crystals.
-                    </p>
-<div class="grid grid-cols-2 gap-6 mb-8">
+<!-- Technical Benchmarks Section -->
+<section class="flex flex-col gap-8">
+<div class="flex justify-between items-end border-b border-outline-variant pb-2">
+<h2 class="font-headline-md text-headline-md text-primary">Technical Benchmarks</h2>
+<div class="flex items-center gap-stack-md flex-shrink-0">
+<span class="font-technical-data text-technical-data text-stone-gray">Displaying 142 References</span>
+<select class="bg-surface-container-low border-none rounded px-4 py-2 font-technical-data text-technical-data outline-none focus:ring-1 focus:ring-primary">
+<option>Filter: Base Material</option>
+<option>Filter: Geometric Form</option>
+<option>Filter: Machining Type</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Spec Reference Item 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all duration-300 flex flex-col sm:flex-row p-4 gap-6 group">
+<div class="w-full sm:w-48 sm:h-48 flex-shrink-0 bg-surface-container-low border border-outline-variant relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A professional studio product shot of several high-quality, deep purple faceted amethyst stones arranged on a pristine white marble surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYUgr6LQ56Mf77C88C3w1sz5CjuqUtMWKNzW0UYUxhMreDL6Oa_nXUOOBrsWG8D0qytYQDKfn0a08S21rPv-SHD8OZ29b3yIVroyGSY1gdyv7KLFjvziOXxdxa4B-Z_UP7HuQ4kXpStDF7NxiZSHfbttICj8zbxRocAKHuaL6NdKmShweHtN_WCucLoH24e3j89v0Ac6nExZwKjfp_Oc3MprSVreE7ZF5_qB9jPIbZjYj1cL9V8MheXA">
+</div>
+<div class="flex-1 flex flex-col justify-between">
 <div>
-<h4 class="font-label-caps text-label-caps text-primary border-b border-outline-variant pb-2 mb-4">Key Parameters</h4>
-<ul class="space-y-3">
-<li class="flex items-center font-technical-data text-technical-data">
-<span class="material-symbols-outlined mr-2 text-sm">straighten</span> Length/Width: up to 120mm
-                                </li>
-<li class="flex items-center font-technical-data text-technical-data">
-<span class="material-symbols-outlined mr-2 text-sm">layers</span> Thickness: 1mm - 25mm
-                                </li>
-<li class="flex items-center font-technical-data text-technical-data">
-<span class="material-symbols-outlined mr-2 text-sm">adjust</span> Hole Position: Center/Offset
-                                </li>
-</ul>
-</div>
-<div class="bg-surface-container-low p-4 rounded-lg">
-<h4 class="font-label-caps text-label-caps text-primary mb-3">Hole Standards</h4>
-<div class="flex space-x-4">
-<div class="text-center">
-<span class="material-symbols-outlined block text-3xl mb-1">radio_button_checked</span>
-<span class="text-[10px] font-technical-data">Through-hole</span>
-</div>
-<div class="text-center">
-<span class="material-symbols-outlined block text-3xl mb-1">radio_button_partial</span>
-<span class="text-[10px] font-technical-data">Blind-hole</span>
-</div>
-<div class="text-center">
-<span class="material-symbols-outlined block text-3xl mb-1">open_with</span>
-<span class="text-[10px] font-technical-data">Side-drill</span>
-</div>
-</div>
-</div>
-</div>
-<button class="bg-amethyst-deep text-on-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
-                        Start a Project
-                    </button>
-</div>
-<div class="h-64 bg-surface-variant relative overflow-hidden" data-alt="A macro photograph of a large, precision-cut smoky quartz pendant with perfectly sharp facets and a clean technical through-hole. The lighting is cold and clinical, highlighting the geometric perfection and lack of internal inclusions. The crystal is placed on a matte black architectural surface, reflecting a high-end industrial engineering aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBi397buR-yxHa-qFYKMeM_Y2ap4dxJRKP2-nNmu9uni7fXRHoLHjLz5epUr_KIPwClao-mOatGbHqq2k5u3leVUv-al2fZMXgMKBL630M4PXjf4bEHYoaWdqBJTZJbEBIq0zQGE4COntylAZjbU_rro_P9v7A6DSMDsbpiFytUpuZ-REE9QxaDpqIbFZKErIADIpMrGuQMZQO9fL_oissqe-MzRnckr8avgBr9l6BA0IszpTZROifv-w')">
-</div>
-</div>
-<!-- 2. Earring Pairs -->
-<div class="col-span-12 md:col-span-5 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden flex flex-col">
-<div class="h-48 bg-surface-variant relative overflow-hidden" data-alt="Two identical pear-shaped clear crystals laid out symmetrically on a technical drawing grid. Calipers are visible in the background, implying precision measurement. The lighting is bright and even, casting soft shadows that emphasize the identical color grading and refractive indices of the pair." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDICbeCjIvZ2emORKjSSUJyuRpShpMEodUMRSE0Wi4lgysorys0CC1rAdHNbgH959k1AMxzxe45B7YOOCNbfWx0qvkGU4Er-cu_XyUJNiQtrJraI4oYJyGcnM00WBICSoC8gODncjVHkQjZ-5XTLpUaC_AEpf5xvJXFc0vskbZ1XgiuegtdG3gz0fr4uuGDuXg0No6vT5kkGkijYzrJT4uHcQMg12nGKb43zKRaoiW9VDTTA9WK48wMqw')">
-</div>
-<div class="p-8">
-<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 02</span>
-<h2 class="font-headline-md text-headline-md text-primary mb-4">Earring Pairs</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                        Automated visual matching for refractive index, color saturation, and weight symmetry.
-                    </p>
-<div class="space-y-4 mb-8">
-<div class="flex justify-between items-center bg-surface-container-low p-3 rounded">
-<span class="font-technical-data text-technical-data">Weight Tolerance</span>
-<span class="font-technical-data text-technical-data font-bold">鍗?.005g</span>
-</div>
-<div class="flex justify-between items-center bg-surface-container-low p-3 rounded">
-<span class="font-technical-data text-technical-data">Color Delta-E</span>
-<span class="font-technical-data text-technical-data font-bold">&lt; 0.8</span>
-</div>
-</div>
-<button class="w-full bg-secondary text-on-secondary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all">
-                        Start a Project
-                    </button>
-</div>
-</div>
-<!-- 3. Existing Setting Adaptation -->
-<div class="col-span-12 md:col-span-4 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
-<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 03</span>
-<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Setting Adaptation</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                    Reverse engineering for pre-cast metal settings. Send us your CAD or physical sample for perfect stone fitment.
-                </p>
-<div class="mb-8 border-l-2 border-primary-container pl-4 py-2">
-<p class="text-label-caps font-label-caps text-primary mb-1">Process</p>
-<p class="text-technical-data font-technical-data text-smoky-quartz">3D Scanning 閳?CAD Integration 閳?Tolerance Offset 閳?Sample Cut</p>
-</div>
-<button class="w-full border border-primary text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-low transition-all">
-                    Start a Project
-                </button>
-</div>
-<!-- 4. Bead Collections -->
-<div class="col-span-12 md:col-span-4 solution-card bg-surface-container-lowest border border-outline-variant rounded-xl p-8">
-<span class="font-label-caps text-label-caps text-smoky-quartz mb-2 block uppercase tracking-widest">Task 04</span>
-<h2 class="font-headline-sm text-headline-sm text-primary mb-4">Bead Collections</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                    Bulk precision sourcing for high-end beaded strands. Uniformity in hole diameter and internal polish.
-                </p>
-<div class="grid grid-cols-2 gap-2 mb-8">
-<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
-<span class="material-symbols-outlined text-sm mr-2">panorama_fish_eye</span>
-<span class="text-technical-data font-technical-data text-[11px]">Sphere</span>
-</div>
-<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
-<span class="material-symbols-outlined text-sm mr-2">hexagon</span>
-<span class="text-technical-data font-technical-data text-[11px]">Faceted</span>
-</div>
-<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
-<span class="material-symbols-outlined text-sm mr-2">crop_portrait</span>
-<span class="text-technical-data font-technical-data text-[11px]">Tube</span>
-</div>
-<div class="p-2 border border-outline-variant rounded flex items-center bg-basalt-white">
-<span class="material-symbols-outlined text-sm mr-2">token</span>
-<span class="text-technical-data font-technical-data text-[11px]">Rondelle</span>
-</div>
-</div>
-<button class="w-full border border-primary text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-low transition-all">
-                    Start a Project
-                </button>
-</div>
-<!-- 5. New Component Development -->
-<div class="col-span-12 md:col-span-4 solution-card bg-primary text-on-primary rounded-xl p-8 flex flex-col justify-between">
+<div class="flex justify-between items-start mb-2">
 <div>
-<span class="font-label-caps text-label-caps text-on-primary-container mb-2 block uppercase tracking-widest">Task 05</span>
-<h2 class="font-headline-sm text-headline-sm text-on-primary mb-4">Custom R&amp;D</h2>
-<p class="font-body-md text-body-md opacity-80 mb-6">
-                        Unique shapes, proprietary cutting patterns, and experimental material treatments.
-                    </p>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 font-label-caps text-[10px] tracking-widest rounded-sm mb-2 inline-block">SPEC REF: AMY-OCT-042</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Precision Facets</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-technical-data text-[12px] flex items-center gap-1 border border-outline-variant px-3 py-1.5 rounded transition-colors">
+<span class="material-symbols-outlined text-[16px]">rule</span> Initiate Technical Review
+                                </button>
+</div>
+<p class="text-technical-data text-stone-gray max-w-xl mb-4">Baseline specification for high-clarity Natural Crystal (SiO2) components, suitable for premium settings or optical applications requiring distinct color bands.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-outline-variant pt-4">
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Refractive Index</p>
+<p class="font-technical-data text-technical-data">1.544 - 1.553</p>
 </div>
 <div>
-<div class="mb-8 flex items-center bg-primary-container/40 p-4 rounded-lg border border-white/10">
-<span class="material-symbols-outlined text-on-primary-container mr-4">science</span>
-<div class="font-technical-data text-technical-data">
-                            Full CAD support and material disclosure provided for every R&amp;D project.
-                        </div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Mohs Hardness</p>
+<p class="font-technical-data text-technical-data">7.0</p>
 </div>
-<button class="w-full bg-basalt-white text-primary px-8 py-3 rounded-lg font-label-caps text-label-caps hover:bg-surface-container-high active:scale-95 transition-all">
-                        Consult Expert
-                    </button>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Dimensional Tolerance</p>
+<p class="font-technical-data text-technical-data">卤0.05 mm</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Production MOQ</p>
+<p class="font-technical-data text-technical-data">500 Units / Batch</p>
 </div>
 </div>
 </div>
+</div>
+<!-- Spec Reference Item 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant hover:border-primary transition-all duration-300 flex flex-col sm:flex-row p-4 gap-6 group">
+<div class="w-full sm:w-48 sm:h-48 flex-shrink-0 bg-surface-container-low border border-outline-variant relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="Close-up macro photography of a set of smoky quartz crystal spheres on a brushed metal tray." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaPwo9UdnmXFbMq0sVqKob3_3K4wMmS3WybnQ3nfDqq9aiLJo667bDj7E8gn3VmQhS7pDaXODXpMpzsIKcxgNVz7LZjBf6VJf91TiL0bQUDWz71F_ncwQZ7takPPflszd4rTsvNV5XlBnuNBfld638yPX7w6TFC6xkarhIhEOQ124RycOGbXiTq4peHFFbXkSERTbZ4Q4d4C0uRNZgKKXoK-fFXaJBvQpny9LRs48Sz6MhIlwowm9NbQ">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="bg-surface-variant text-on-surface-variant px-2 py-1 font-label-caps text-[10px] tracking-widest rounded-sm mb-2 inline-block">SPEC REF: SMQ-SPH-012</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Calibrated Spheres</h3>
+</div>
+<button class="text-on-surface-variant hover:text-primary font-technical-data text-[12px] flex items-center gap-1 border border-outline-variant px-3 py-1.5 rounded transition-colors">
+<span class="material-symbols-outlined text-[16px]">rule</span> Initiate Technical Review
+                                </button>
+</div>
+<p class="text-technical-data text-stone-gray max-w-xl mb-4">Precision-ground spherical components. Available with custom center-drilling for mechanical assemblies or decorative integration.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-outline-variant pt-4">
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Refractive Index</p>
+<p class="font-technical-data text-technical-data">1.544 - 1.553</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Mohs Hardness</p>
+<p class="font-technical-data text-technical-data">7.0</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Dimensional Tolerance</p>
+<p class="font-technical-data text-technical-data">脴 12.0 mm (卤0.05)</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Production MOQ</p>
+<p class="font-technical-data text-technical-data">5,000 Units / Batch</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Spec Reference Item 3 (Highlighted) -->
+<div class="bg-surface-container-lowest border-2 border-primary shadow-sm flex flex-col sm:flex-row p-4 gap-6 group relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-3 py-1 font-label-caps text-[10px] tracking-widest z-10">RECOMMENDED BASELINE</div>
+<div class="w-full sm:w-48 sm:h-48 flex-shrink-0 bg-surface-container-low border border-outline-variant relative overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-90 transition-transform duration-700 group-hover:scale-105" data-alt="A detailed view of transparent clear quartz crystal points arranged in a geometric grid on a dark slate surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjiJf1iPnIXohBvlcNe6ngmwbajvKdLtGRlw2utYtrbohh1fbqOvLpuRQYpnEoAb3tU8eWR4arspHHEsENGJToeJLzFJ0N_qeMg3DMvVXIGzjTNo-foyOo1sRr_UdrdQNEJyzX8O1T_Jz-4WVG5EDuEjdZ0Jmij7pULLZvZXKpvJHIvmGp5cMk_o8qhJNtGTzMTC_tjZs2aB563hK4UWl6mhmlqdDVyN_DMdF82X1GvsOu6ESWGRD-5w">
+</div>
+<div class="flex-1 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<div>
+<span class="bg-primary text-white px-2 py-1 font-label-caps text-[10px] tracking-widest rounded-sm mb-2 inline-block">SPEC REF: CLQ-PNT-990</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Natural Crystal Points</h3>
+</div>
+<button class="bg-primary text-white hover:bg-primary-container font-technical-data text-[12px] flex items-center gap-1 px-3 py-1.5 rounded transition-colors">
+<span class="material-symbols-outlined text-[16px]">download</span> Download Spec Sheet
+                                </button>
+</div>
+<p class="text-technical-data text-stone-gray max-w-xl mb-4">High-purity crystalline structures ideal as starting material for custom optical components, bespoke luxury items, or scientific instrumentation.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 border-t border-outline-variant pt-4">
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Base Material</p>
+<p class="font-technical-data text-technical-data">99.9% SiO2</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Mohs Hardness</p>
+<p class="font-technical-data text-technical-data">7.0</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Dimensional Tolerance</p>
+<p class="font-technical-data text-technical-data">Height 45 - 60 mm</p>
+</div>
+<div>
+<p class="text-[10px] font-label-caps text-stone-gray uppercase mb-1">Production MOQ</p>
+<p class="font-technical-data text-technical-data">50kg Bulk Tiers</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Custom Engineering Call to Action -->
+<div class="bg-surface-container-low border border-dashed border-outline-variant p-8 mt-4 text-center rounded">
+<span class="material-symbols-outlined text-4xl text-stone-gray mb-4">architecture</span>
+<h3 class="font-headline-sm text-primary mb-2">Require a Unique Specification?</h3>
+<p class="text-technical-data text-on-surface-variant max-w-xl mx-auto mb-6">Our Donghai facility offers end-to-end custom cutting, drilling, and calibration for proprietary designs based on your engineering drawings.</p>
+<button class="bg-amethyst-deep text-white px-6 py-3 rounded font-label-caps text-[12px] hover:bg-primary transition-colors inline-flex items-center gap-2">
+                        Submit Technical Drawings <span class="material-symbols-outlined text-[16px]">upload_file</span>
+</button>
+</div>
+</div>
+<!-- Pagination -->
+
+</section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container-highest border-t border-outline-variant mt-24">
+<footer class="bg-surface-container-highest dark:bg-surface-container border-t border-outline-variant dark:border-outline mt-12">
 <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-stack-lg max-w-container-max mx-auto">
-<div class="col-span-1">
-<div class="font-headline-sm text-headline-sm text-primary mb-4">DONGHAI CRYSTAL</div>
-<p class="font-body-md text-body-md text-on-surface-variant">婕?2024 Donghai Crystal. Professional Precision Sourcing.</p>
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed mb-4">DONGHAI CRYSTAL</div>
+<p class="text-body-md text-on-surface-variant mb-4">Professional precision sourcing and technical gemstone manufacturing based in China's crystal capital.</p>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-[10px]" href="#">WhatsApp</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-caps text-[10px]" href="#">Email</a>
 </div>
-<div>
-<h4 class="font-label-caps text-label-caps text-primary mb-6">Resources</h4>
-<ul class="space-y-3">
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Material Disclosures</a></li>
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Compliance</a></li>
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Cutting Types Guide</a></li>
-</ul>
 </div>
-<div>
-<h4 class="font-label-caps text-label-caps text-primary mb-6">Legal</h4>
-<ul class="space-y-3">
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-</ul>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">RESOURCES</span>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Material Disclosures</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Compliance Standards</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Shipping &amp; Logistics</a>
 </div>
-<div>
-<h4 class="font-label-caps text-label-caps text-primary mb-6">Contact</h4>
-<ul class="space-y-3">
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">WhatsApp Support</a></li>
-<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Email Engineering</a></li>
-</ul>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">LEGAL</span>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-all text-body-md" href="#">Sourcing Integrity</a>
 </div>
+<div class="flex flex-col gap-3">
+<span class="font-label-caps text-label-caps text-primary font-bold">TECHNICAL PORTAL</span>
+<p class="text-technical-data text-on-surface-variant mb-2">Access your custom blueprints and batch tracking in the secure client portal.</p>
+<button class="bg-primary text-on-primary py-2 px-4 rounded font-label-caps text-[11px] self-start hover:opacity-90">Log In to Portal</button>
+</div>
+</div>
+<div class="px-margin-desktop py-4 border-t border-outline-variant/30 flex justify-center">
+<p class="text-technical-data text-stone-gray">漏 2024 Donghai Crystal. Professional Precision Sourcing. All Rights Reserved.</p>
 </div>
 </footer>
-<script>
-        // Micro-interactions for solution cards
-        document.querySelectorAll('.solution-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.querySelector('button')?.classList.add('shadow-md');
-            });
-            card.addEventListener('mouseleave', () => {
-                card.querySelector('button')?.classList.remove('shadow-md');
-            });
-        });
-    </script>
-<script src="/site-nav.js"></script></body></html>
+
+
+<script src="/site-nav.js"></script>
+</body></html>
