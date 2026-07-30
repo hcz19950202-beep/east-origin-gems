@@ -171,7 +171,7 @@
 <h1 class="font-headline-lg text-headline-lg text-primary mb-2">Design Review Intake</h1>
 <p class="text-on-surface-variant font-body-lg">Initiate your high-precision sourcing inquiry. This data allows our engineering team to assess material compatibility and production feasibility.</p>
 </header>
-<form class="space-y-stack-md" id="intake-form">
+<form class="space-y-stack-md" enctype="multipart/form-data" id="intake-form">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
 <!-- Name Field -->
 <div class="flex flex-col gap-2">
@@ -214,13 +214,15 @@
 <!-- Drag & Drop Zone -->
 <div class="mt-8">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase block mb-2">Technical Design Files (.STP, .DWG, .PDF)</label>
-<div class="border-2 border-dashed border-outline-variant bg-surface-container-low h-48 rounded-lg flex flex-col items-center justify-center gap-4 group hover:border-primary hover:bg-surface-container transition-all cursor-pointer" id="drop-zone">
+<input accept=".stp,.step,.dwg,.dxf,.pdf,.zip" class="sr-only" id="technical-file-upload" multiple name="attachment" type="file"/>
+<label class="border-2 border-dashed border-outline-variant bg-surface-container-low h-48 rounded-lg flex flex-col items-center justify-center gap-4 group hover:border-primary hover:bg-surface-container transition-all cursor-pointer" for="technical-file-upload" id="drop-zone">
 <span class="material-symbols-outlined text-4xl text-smoky-quartz group-hover:text-primary transition-colors">upload_file</span>
 <div class="text-center">
-<p class="font-body-md text-primary font-semibold">Drop technical schematics here</p>
-<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">Maximum file size 50MB per upload</p>
+<p class="font-body-md text-primary font-semibold">Drop files here or click to browse</p>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase">.STP, .STEP, .DWG, .DXF, .PDF, .ZIP 路 10MB total maximum</p>
+<p aria-live="polite" class="font-label-caps text-[10px] text-on-surface-variant mt-2" id="file-status">No file selected</p>
 </div>
-</div>
+</label>
 </div>
 <div class="pt-8 flex justify-end">
 <button class="bg-primary text-on-primary px-12 py-4 rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all flex items-center gap-3" type="submit">
@@ -306,6 +308,9 @@
 <script>
         // Micro-interactions for Drag & Drop Zone
         const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('technical-file-upload');
+        const fileStatus = document.getElementById('file-status');
+        const maxUploadSize = 10 * 1024 * 1024;
         
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
             dropZone.addEventListener(eventName, preventDefaults, false);
@@ -329,22 +334,27 @@
         });
 
         dropZone.addEventListener('drop', (e) => {
-            const dt = e.dataTransfer;
-            const files = dt.files;
-            handleFiles(files);
+            handleFiles(e.dataTransfer.files);
         });
 
         function handleFiles(files) {
-            if (files.length > 0) {
-                dropZone.innerHTML = `
-                    <span class="material-symbols-outlined text-4xl text-success-emerald">check_circle</span>
-                    <div class="text-center">
-                        <p class="font-body-md text-success-emerald font-semibold">${files.length} File(s) Staged</p>
-                        <p class="font-label-caps text-[10px] text-on-surface-variant uppercase">${files[0].name.substring(0, 20)}...</p>
-                    </div>
-                `;
+            if (!files.length) return;
+            const totalSize = Array.from(files).reduce((total, file) => total + file.size, 0);
+            if (totalSize > maxUploadSize) {
+                fileInput.value = '';
+                fileStatus.textContent = 'Files exceed the 10MB total limit. Please choose smaller files.';
+                fileStatus.className = 'font-label-caps text-[10px] text-error mt-2';
+                return;
             }
+
+            const dataTransfer = new DataTransfer();
+            Array.from(files).forEach((file) => dataTransfer.items.add(file));
+            fileInput.files = dataTransfer.files;
+            fileStatus.textContent = `${files.length} file(s) ready: ${files[0].name}`;
+            fileStatus.className = 'font-label-caps text-[10px] text-success-emerald mt-2';
         }
+
+        fileInput.addEventListener('change', () => handleFiles(fileInput.files));
 
         // Input Focus Effects
         const inputs = document.querySelectorAll('input, select');
@@ -358,3 +368,4 @@
         });
     </script>
 <script src="/site-nav.js"></script><script src="/contact.js"></script></body></html>
+
