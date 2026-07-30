@@ -1,4 +1,6 @@
 (() => {
+  const whatsappNumber = "8615252474087";
+  const whatsappUrl = (text) => `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text || "Hello, I would like to discuss a B2B crystal sourcing inquiry.")}`;
   const routes = [
     [/\bhome\b/i, "/"],
     [/solutions?|material sourcing|logistics/i, "/solutions/"],
@@ -16,11 +18,22 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll("a[href='#'], button").forEach((element) => {
-      const destination = routeFor((element.textContent || "").replace(/\s+/g, " ").trim());
+      const label = (element.textContent || "").replace(/\s+/g, " ").trim();
+      if (/whatsapp/i.test(label)) {
+        const destination = whatsappUrl(`Hello Donghai Crystal, I would like to discuss a B2B sourcing inquiry. Page: ${window.location.href}`);
+        if (element.tagName === "A") {
+          element.setAttribute("href", destination);
+          element.setAttribute("target", "_blank");
+          element.setAttribute("rel", "noopener noreferrer");
+        } else {
+          element.addEventListener("click", () => { window.open(destination, "_blank", "noopener,noreferrer"); });
+        }
+        return;
+      }
+      const destination = routeFor(label);
       if (!destination) return;
       if (element.tagName === "A") element.setAttribute("href", destination);
       else element.addEventListener("click", () => { window.location.href = destination; });
     });
   });
 })();
-
