@@ -262,18 +262,18 @@
 <!-- Contact Details -->
 <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
 <div>
-<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="company_name">Company Name</label>
-<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="company_name" placeholder="ACME Manufacturing" type="text"/>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="contact_name">Contact Name *</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="contact_name" name="contact_name" placeholder="Your name" required type="text"/>
 </div>
 <div>
-<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="contact_email">Professional Email</label>
-<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="contact_email" placeholder="buyer@acme.com" type="email"/>
+<label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="contact_email">Professional Email *</label>
+<input class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="contact_email" name="email" placeholder="buyer@acme.com" required type="email"/>
 </div>
 </div>
 <!-- Specifications (Conditional vis logic would go here in full app) -->
 <div>
 <label class="block font-label-caps text-label-caps text-on-surface mb-stack-sm" for="specifications">Technical Specifications / Notes</label>
-<textarea class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="specifications" placeholder="Specify desired material types or attach reference links..." rows="4"></textarea>
+<textarea class="w-full bg-surface border border-outline-variant rounded p-stack-sm font-technical-data text-technical-data text-on-surface focus:border-primary focus:ring-1 focus:ring-primary placeholder:text-stone-gray" id="specifications" name="specifications" placeholder="Specify desired material types or attach reference links..." rows="4"></textarea>
 </div>
 <!-- Submit -->
 <div class="flex justify-end pt-stack-sm">
