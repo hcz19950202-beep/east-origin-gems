@@ -21,6 +21,101 @@
     ar:{"Solutions":"الحلول","Products":"المنتجات","Custom Development":"تطوير مخصص","Quality":"الجودة","About":"من نحن","Submit Project Brief":"إرسال موجز المشروع","Technical Components Catalog":"كتالوج المكونات التقنية","Technical Sourcing Directory":"دليل التوريد التقني","Reference specifications for precision crystal components. Use this directory to identify base materials and geometries for your custom manufacturing project.":"مواصفات مرجعية لمكونات الكريستال الدقيقة. استخدم هذا الدليل لتحديد المواد والأشكال الأساسية لمشروع التصنيع الخاص بك.","Core Capabilities":"القدرات الأساسية","Technical Benchmarks":"المعايير التقنية","Require a Unique Specification?":"هل تحتاج إلى مواصفة فريدة؟","Submit Technical Drawings":"إرسال الرسومات التقنية"},
     ru:{"Solutions":"Решения","Products":"Продукция","Custom Development":"Индивидуальная разработка","Quality":"Качество","About":"О компании","Submit Project Brief":"Отправить проект","Technical Components Catalog":"Каталог технических компонентов","Technical Sourcing Directory":"Технический каталог поставок","Reference specifications for precision crystal components. Use this directory to identify base materials and geometries for your custom manufacturing project.":"Справочные спецификации для точных хрустальных компонентов. Используйте каталог для выбора материалов и геометрии для вашего проекта.","Core Capabilities":"Ключевые возможности","Technical Benchmarks":"Технические ориентиры","Require a Unique Specification?":"Нужна уникальная спецификация?","Submit Technical Drawings":"Отправить технические чертежи"}
   };
+  const whatsappNumber = "8615252474087";
+  const whatsappCopy = {
+    en: {
+      aria: "Chat with East Origin Gems on WhatsApp",
+      message: "Hello East Origin Gems, I would like to discuss a B2B crystal sourcing inquiry."
+    },
+    fr: {
+      aria: "Discuter avec East Origin Gems sur WhatsApp",
+      message: "Bonjour East Origin Gems, je souhaite discuter d'une demande d'approvisionnement B2B en cristal."
+    },
+    de: {
+      aria: "East Origin Gems über WhatsApp kontaktieren",
+      message: "Hallo East Origin Gems, ich möchte eine B2B-Anfrage zur Beschaffung von Kristallkomponenten besprechen."
+    },
+    es: {
+      aria: "Contactar con East Origin Gems por WhatsApp",
+      message: "Hola East Origin Gems, me gustaría hablar sobre una consulta B2B de abastecimiento de componentes de cristal."
+    },
+    pt: {
+      aria: "Falar com a East Origin Gems pelo WhatsApp",
+      message: "Olá East Origin Gems, gostaria de conversar sobre uma consulta B2B de fornecimento de componentes de cristal."
+    },
+    ar: {
+      aria: "تواصل مع East Origin Gems عبر واتساب",
+      message: "مرحباً East Origin Gems، أود مناقشة طلب توريد مكونات كريستال للأعمال."
+    },
+    ru: {
+      aria: "Связаться с East Origin Gems через WhatsApp",
+      message: "Здравствуйте, East Origin Gems. Я хотел(а) бы обсудить B2B-запрос на поставку компонентов из кристалла."
+    }
+  };
+  const addWhatsAppButton = () => {
+    if (document.getElementById("eog-whatsapp-float")) return;
+    const copy = whatsappCopy[language] || whatsappCopy.en;
+    const style = document.createElement("style");
+    style.textContent = `
+      #eog-whatsapp-float {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 70;
+        min-height: 54px;
+        padding: 0 20px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        background: #25d366;
+        color: #ffffff;
+        font: 700 14px/1.2 Arial, sans-serif;
+        text-decoration: none;
+        direction: ltr;
+        box-shadow: 0 10px 28px rgba(16, 74, 43, 0.28);
+        transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+      }
+      #eog-whatsapp-float:hover {
+        background: #1fbd59;
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(16, 74, 43, 0.34);
+      }
+      #eog-whatsapp-float:focus-visible {
+        outline: 3px solid #ffffff;
+        outline-offset: 3px;
+        box-shadow: 0 0 0 6px #167a3d;
+      }
+      #eog-whatsapp-float .material-symbols-outlined {
+        font-size: 24px;
+        line-height: 1;
+      }
+      @media (max-width: 640px) {
+        #eog-whatsapp-float {
+          right: 16px;
+          bottom: 16px;
+          width: 56px;
+          height: 56px;
+          min-height: 56px;
+          padding: 0;
+        }
+        #eog-whatsapp-float .eog-whatsapp-label {
+          display: none;
+        }
+      }
+    `;
+    document.head.append(style);
+    const link = document.createElement("a");
+    link.id = "eog-whatsapp-float";
+    link.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`${copy.message} Page: ${window.location.href}`)}`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", copy.aria);
+    link.innerHTML = '<span class="material-symbols-outlined" aria-hidden="true">chat</span><span class="eog-whatsapp-label">WhatsApp</span>';
+    document.body.append(link);
+  };
+  addWhatsAppButton();
   const dictionary = translations[language] || {};
   document.querySelectorAll("a, button").forEach((element) => {
     const label = (element.textContent || "").replace(/\s+/g, " ").trim();
