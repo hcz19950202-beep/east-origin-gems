@@ -176,24 +176,24 @@
 <!-- Name Field -->
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Primary Contact Name</label>
-<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" placeholder="E.G. ALEXANDER VANCE" type="text"/>
+<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" name="contact_name" placeholder="E.G. ALEXANDER VANCE" required type="text"/>
 </div>
 <!-- Company Field -->
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Brand / Organization</label>
-<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" placeholder="E.G. VANCE LUXURY ATELIER" type="text"/>
+<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" name="company" placeholder="E.G. VANCE LUXURY ATELIER" type="text"/>
 </div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
 <!-- Email Field -->
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Corporate Email</label>
-<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" placeholder="SOURCING@COMPANY.COM" type="email"/>
+<input class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" name="email" placeholder="SOURCING@COMPANY.COM" required type="email"/>
 </div>
 <!-- Country Field -->
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Region of Operation</label>
-<select class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white appearance-none">
+<select class="border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white appearance-none" name="region">
 <option>SELECT COUNTRY</option>
 <option>UNITED STATES</option>
 <option>FRANCE</option>
@@ -207,7 +207,7 @@
 <div class="flex flex-col gap-2">
 <label class="font-label-caps text-label-caps text-on-surface-variant uppercase">Expected Annual Quantity (Units)</label>
 <div class="relative">
-<input class="w-full border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" placeholder="0000" type="number"/>
+<input class="w-full border border-outline-variant p-3 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-technical-data text-technical-data bg-white" name="annual_quantity" placeholder="0000" type="number"/>
 <span class="absolute right-4 top-1/2 -translate-y-1/2 text-outline-variant font-technical-data">QTY</span>
 </div>
 </div>
@@ -223,7 +223,7 @@
 </div>
 </div>
 <div class="pt-8 flex justify-end">
-<button class="bg-primary text-on-primary px-12 py-4 rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all flex items-center gap-3" type="button">
+<button class="bg-primary text-on-primary px-12 py-4 rounded-lg font-label-caps text-label-caps tracking-widest hover:bg-primary-container transition-all flex items-center gap-3" type="submit">
                             CONTINUE TO MATERIAL SPECS
                             <span class="material-symbols-outlined">arrow_forward</span>
 </button>
