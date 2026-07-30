@@ -30,6 +30,7 @@
       addHiddenField(form, "_next", confirmationUrl);
       addHiddenField(form, "_template", "table");
       addHiddenField(form, "_captcha", "false");
+      addHiddenField(form, "_url", window.location.href);
       addHiddenField(form, "inquiry_source", source);
 
       form.addEventListener("submit", () => {
