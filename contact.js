@@ -26,6 +26,7 @@
       form.action = `https://formsubmit.co/${recipient}`;
       form.method = "POST";
       form.acceptCharset = "UTF-8";
+      if (form.querySelector('input[type="file"]')) form.enctype = "multipart/form-data";
       addHiddenField(form, "_subject", `New B2B inquiry: ${source}`);
       addHiddenField(form, "_next", confirmationUrl);
       addHiddenField(form, "_template", "table");
@@ -44,3 +45,4 @@
     });
   });
 })();
+
