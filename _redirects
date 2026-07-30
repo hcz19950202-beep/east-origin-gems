@@ -1,0 +1,25 @@
+# Retire the historical multilingual preview and send visitors to the
+# equivalent page in the current production design.
+/language-preview / 301
+/language-preview/ / 301
+/language-preview/en / 301
+/language-preview/en/ / 301
+/language-preview/fr /fr/ 301
+/language-preview/fr/ /fr/ 301
+/language-preview/de /de/ 301
+/language-preview/de/ /de/ 301
+/language-preview/es /es/ 301
+/language-preview/es/ /es/ 301
+/language-preview/pt /pt/ 301
+/language-preview/pt/ /pt/ 301
+/language-preview/ar /ar/ 301
+/language-preview/ar/ /ar/ 301
+/language-preview/ru /ru/ 301
+/language-preview/ru/ /ru/ 301
+/language-preview/en/* /:splat 301
+/language-preview/fr/* /fr/:splat 301
+/language-preview/de/* /de/:splat 301
+/language-preview/es/* /es/:splat 301
+/language-preview/pt/* /pt/:splat 301
+/language-preview/ar/* /ar/:splat 301
+/language-preview/ru/* /ru/:splat 301
