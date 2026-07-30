@@ -17,6 +17,26 @@
   const routeFor = (text) => routes.find(([pattern]) => pattern.test(text))?.[1];
 
   document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("a, div, span").forEach((element) => {
+      if ((element.textContent || "").replace(/\s+/g, " ").trim() !== "DONGHAI CRYSTAL") return;
+      if (element.querySelector("a, div, span")) return;
+      if (element.tagName === "A") {
+        element.setAttribute("href", "/");
+        return;
+      }
+      element.setAttribute("role", "link");
+      element.setAttribute("tabindex", "0");
+      element.classList.add("cursor-pointer");
+      const goHome = () => { window.location.href = "/"; };
+      element.addEventListener("click", goHome);
+      element.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          goHome();
+        }
+      });
+    });
+
     document.querySelectorAll("a[href='#'], button").forEach((element) => {
       const label = (element.textContent || "").replace(/\s+/g, " ").trim();
       if (/whatsapp/i.test(label)) {
