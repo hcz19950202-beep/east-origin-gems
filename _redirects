@@ -23,3 +23,20 @@
 /language-preview/pt/* /pt/:splat 301
 /language-preview/ar/* /ar/:splat 301
 /language-preview/ru/* /ru/:splat 301
+
+# Solutions and Products covered the same sourcing capabilities. Products is
+# now the single catalog route; keep old bookmarks and search links working.
+/solutions /products/ 301
+/solutions/ /products/ 301
+/fr/solutions /fr/products/ 301
+/fr/solutions/ /fr/products/ 301
+/de/solutions /de/products/ 301
+/de/solutions/ /de/products/ 301
+/es/solutions /es/products/ 301
+/es/solutions/ /es/products/ 301
+/pt/solutions /pt/products/ 301
+/pt/solutions/ /pt/products/ 301
+/ar/solutions /ar/products/ 301
+/ar/solutions/ /ar/products/ 301
+/ru/solutions /ru/products/ 301
+/ru/solutions/ /ru/products/ 301

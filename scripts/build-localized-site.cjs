@@ -19,7 +19,6 @@ const languages = {
 const allLanguageCodes = ["en", ...Object.keys(languages)];
 const sourcePages = [
   "index.html",
-  "solutions/index.html",
   "products/index.html",
   "custom-development/index.html",
   "samples/index.html",
@@ -56,6 +55,29 @@ const languageUrl = (language, route) => {
 const pageRoute = (relativeFile) => {
   if (relativeFile === "index.html") return "/";
   return `/${relativeFile.replace(/index\.html$/i, "").replace(/\\/g, "/")}`;
+};
+
+const writeSolutionsRedirect = (language = "en") => {
+  const prefix = language === "en" ? "" : `/${language}`;
+  const target = `${prefix}/products/`;
+  const outputFile = path.join(repo, ...(language === "en" ? [] : [language]), "solutions", "index.html");
+  const html = `<!DOCTYPE html>
+<html lang="${language}"${language === "ar" ? ' dir="rtl"' : ""}>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="refresh" content="0; url=${target}"/>
+  <link rel="canonical" href="${origin}${target}"/>
+  <title>Redirecting to Products</title>
+</head>
+<body>
+  <p><a href="${target}">Continue to Products</a></p>
+  <script>window.location.replace(${JSON.stringify(target)});</script>
+</body>
+</html>
+`;
+  fs.mkdirSync(path.dirname(outputFile), { recursive: true });
+  fs.writeFileSync(outputFile, html, "utf8");
 };
 
 const injectAlternates = (html, relativeFile) => {
@@ -297,6 +319,7 @@ async function main() {
       }
       console.log(`GENERATE language=${language} pages=${sourcePages.length}`);
     }
+    allLanguageCodes.forEach(writeSolutionsRedirect);
   } finally {
     await browser.close();
   }
