@@ -231,6 +231,37 @@ async function main() {
             });
           });
 
+          const sourcePageUrl = new URL(routePath, siteOrigin);
+          const rootAssetUrl = (value) => {
+            if (!value || /^(?:[a-z]+:|\/\/|\/|#|data:|blob:)/i.test(value)) return value;
+            const resolved = new URL(value, sourcePageUrl);
+            return `${resolved.pathname}${resolved.search}${resolved.hash}`;
+          };
+          doc.querySelectorAll("[src]").forEach((element) => {
+            element.setAttribute("src", rootAssetUrl(element.getAttribute("src")));
+          });
+          doc.querySelectorAll("[srcset]").forEach((element) => {
+            const localizedSrcset = element.getAttribute("srcset").split(",").map((candidate) => {
+              const parts = candidate.trim().split(/\s+/);
+              parts[0] = rootAssetUrl(parts[0]);
+              return parts.join(" ");
+            }).join(", ");
+            element.setAttribute("srcset", localizedSrcset);
+          });
+          const rootifyCssUrls = (cssText) => cssText.replace(/url\((['"]?)([^'")]+)\1\)/gi, (match, quote, value) => {
+            const rooted = rootAssetUrl(value.trim());
+            return `url(${quote}${rooted}${quote})`;
+          });
+          doc.querySelectorAll("[style]").forEach((element) => {
+            element.setAttribute("style", rootifyCssUrls(element.getAttribute("style")));
+          });
+          doc.querySelectorAll("style").forEach((element) => {
+            element.textContent = rootifyCssUrls(element.textContent);
+          });
+          doc.querySelectorAll('link[rel~="icon"], link[rel="stylesheet"], link[rel="preload"]').forEach((element) => {
+            element.setAttribute("href", rootAssetUrl(element.getAttribute("href")));
+          });
+
           doc.querySelectorAll("a[href]").forEach((anchor) => {
             const href = anchor.getAttribute("href");
             if (!href || !href.startsWith("/") || href.startsWith("//")) return;
