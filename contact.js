@@ -39,10 +39,9 @@
         if (button && form.checkValidity()) {
           button.disabled = true;
           button.setAttribute("aria-busy", "true");
-          button.textContent = "Sending inquiry鈥?;
+          button.textContent = "Sending inquiry…";
         }
       });
     });
   });
 })();
-
